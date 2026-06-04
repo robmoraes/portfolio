@@ -9,6 +9,25 @@ contract.
 
 ## [Unreleased]
 
+## [0.2.0] - 2026-06-04
+
+### Added
+
+- Added bilingual portfolio support for English and Brazilian Portuguese.
+- Added a floating language toggle with persisted language preference.
+- Added support for locale routes that apply the requested language and then
+  return to the clean home route.
+- Added localized data files for professional trajectory, areas of expertise,
+  certification records and personal manifesto content.
+
+### Changed
+
+- Extracted professional trajectory, main skills, areas of expertise and
+  trajectory tag content from the page component into JSON data files.
+- Renamed skills data and CSS classes to align with the "Main Skills" label.
+- Renamed core skills data and CSS classes to "Areas of Expertise".
+- Updated the project version to 0.2.0.
+
 ## [0.1.0] - 2026-06-04
 
 ### Added
@@ -31,5 +50,6 @@ contract.
 - Configured the Quasar/Vite build to emit relative asset paths for GitHub
   Pages compatibility.
 
-[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.1.0...HEAD
+[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.2.0...HEAD
+[0.2.0]: https://github.com/robmoraes/portfolio/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/robmoraes/portfolio/releases/tag/v0.1.0

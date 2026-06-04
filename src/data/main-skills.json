@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Laravel",
+    "value": 1
+  },
+  {
+    "name": "PHP",
+    "value": 1
+  },
+  {
+    "name": "Go",
+    "value": 0.65
+  },
+  {
+    "name": "Docker",
+    "value": 0.85
+  },
+  {
+    "name": "AWS",
+    "value": 0.65
+  },
+  {
+    "name": "JS|Vue",
+    "value": 0.85
+  },
+  {
+    "name": "Symfony",
+    "value": 0.3
+  },
+  {
+    "name": "DevOps",
+    "value": 0.6
+  }
+]

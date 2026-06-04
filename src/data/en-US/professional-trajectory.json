@@ -1,0 +1,71 @@
+[
+  {
+    "page": 1,
+    "sectionTitle": "Professional Trajectory",
+    "entries": [
+      {
+        "title": "Higher Education",
+        "subtitle": "Feb/1998 to Dec/2000",
+        "body": "Higher education in Data Processing Technology at Universidade Católica de Pelotas (UCPel), earning the title of Technologist in Data Processing. The program consolidated foundations in programming and systems analysis. Final project focused on hotel management."
+      },
+      {
+        "title": "Data Bank do Brasil LTDA",
+        "subtitle": "May/2001 to Jul/2001",
+        "body": "Started my professional path as a desktop developer, working with databases and system integration with electronic devices."
+      },
+      {
+        "title": "Fundação Educational de S. V. do Palmar",
+        "subtitle": "Oct/2001 to Mar/2003",
+        "body": "While working as a lab technician at the foundation, I kept parallel programming activities, creating a library system for the foundation and distributing it to a state school and municipal libraries."
+      },
+      {
+        "title": "AG2 Agência de Inteligência Digital",
+        "subtitle": "Mar/2003 to Nov/2007",
+        "body": "Worked on projects for clients such as Embraer, Bradesco, Renner and Grupo Martins. This period was marked by the transition from classic Microsoft technologies to .NET. Developed internet portals, intranets, extranets and e-commerce platforms. Migrated to ASP.NET/C# while expanding expertise in JS, jQuery, AJAX, SQL Server and MySQL."
+      },
+      {
+        "title": "Object-Oriented Analyst and Designer Training",
+        "subtitle": "Oct/2006 to Nov/2007",
+        "body": "140-hour training focused on UML, object-oriented analysis and design, and mapping OO models to entity-relationship models.",
+        "certificateKey": "oop-analyst-training"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "entries": [
+      {
+        "title": "Fundação CEEE de Seguridade Social",
+        "subtitle": "Nov/2007 to Apr/2011",
+        "body": "After training in Linux server administration, I began a definitive migration from the Microsoft ecosystem to open-source platforms, directing my career toward PHP, PostgreSQL and MySQL. At Fundação CEEE, I consolidated that transition by working on intranet, internet and self-service projects. Deepened knowledge in PostgreSQL, backend development, APIs, JavaScript, AJAX and jQuery."
+      },
+      {
+        "title": "Conectaa Desenvolvimento de Sistemas LTDA",
+        "subtitle": "Aug/2014 to Feb/2021",
+        "body": "Worked on the development and maintenance of web systems in PHP. Adopted Laravel for backend and Vue.js/Quasar.dev for frontend. Studied Clean Code, Design Patterns and automated testing. Worked on projects for the Legislative Branch. Adopted Docker and had initial contact with Kubernetes clusters."
+      },
+      {
+        "title": "Seventh LTDA",
+        "subtitle": "Apr/2021 to present",
+        "body": "Worked on web systems with PHP/Laravel; APIs and automations in Go; maintenance and sustainability of high-impact critical systems; multidisciplinary work with DotNet, Python and Node.js, collaborating with projects from other departments; adoption of AI for mentoring and careful use in software solutions. Highlights:",
+        "highlights": [
+          {
+            "icon": "cloud",
+            "title": "AWS, Cloud",
+            "body": "Responsible for sustaining, monitoring and evolving critical systems on AWS infrastructure."
+          },
+          {
+            "icon": "terminal",
+            "title": "Go, Python",
+            "body": "Automations for openSIPS and FreeSWITCH, enabling integration between company solutions and the VoIP ecosystem."
+          },
+          {
+            "icon": "hub",
+            "title": "DevOps",
+            "body": "Built an HA cluster with Docker Swarm, wildcard DNS, Traefik at the edge, Grafana Stack for observability, WAF and migration of the department's legacy monolithic system inventory to containers under the Single Responsibility principle, with secrets and automated deployments."
+          }
+        ]
+      }
+    ]
+  }
+]

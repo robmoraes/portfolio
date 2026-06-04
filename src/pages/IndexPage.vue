@@ -1,5 +1,19 @@
 <template>
-  <q-page class="index-page column items-center">
+  <q-page class="index-page column items-center q-my-xl">
+    <q-page-sticky position="top-right" :offset="[18, 18]" class="language-toggle-sticky no-print">
+      <q-btn
+        unelevated
+        rounded
+        no-caps
+        icon="language"
+        :label="nextLanguageLabel"
+        class="language-toggle"
+        @click="toggleLocale"
+      >
+        <q-tooltip>{{ $t('languageToggle.tooltip') }}</q-tooltip>
+      </q-btn>
+    </q-page-sticky>
+
     <!-- PAGE 1 -->
     <div class="row justify-center items-start content-start page page-1">
       <div class="col-12 header">
@@ -9,7 +23,7 @@
               Carlos <span class="text-bold">Rob</span>erto
               <span class="text-bold">Moraes</span> Rodrigues Jr.
             </div>
-            <div id="myOccupation">Software Engineer</div>
+            <div id="myOccupation">{{ $t('header.occupation') }}</div>
           </div>
         </div>
       </div>
@@ -66,10 +80,10 @@
         </div>
         <hr class="q-ma-md q-mt-md" />
 
-        <div class="text-center q-my-sm text-subtitle2">Core Skills</div>
-        <div class="skill-list">
-          <div v-for="skill in skills" :key="skill.name" class="skill-item">
-            <div class="skill-label text-caption text-weight-medium">{{ skill.name }}</div>
+        <div class="text-center q-my-sm text-subtitle2">{{ $t('sections.mainSkills') }}</div>
+        <div class="main-skill-list">
+          <div v-for="skill in mainSkills" :key="skill.name" class="main-skill-item">
+            <div class="main-skill-label text-caption text-weight-medium">{{ skill.name }}</div>
             <q-linear-progress
               :value="skill.value"
               size="7px"
@@ -80,16 +94,18 @@
           </div>
         </div>
         <hr class="q-ma-md" />
-        <div class="text-center q-mb-sm text-subtitle2">Áreas de atuação</div>
-        <div class="core-skill-tags">
+        <div class="text-center q-mb-sm text-subtitle2">
+          {{ $t('sections.areasOfExpertise') }}
+        </div>
+        <div class="area-of-expertise-tags">
           <q-chip
-            v-for="skill in coreSkills"
+            v-for="skill in areasOfExpertise"
             :key="skill"
             dense
             square
             color="grey-3"
             text-color="grey-10"
-            class="core-skill-chip"
+            class="area-of-expertise-chip"
           >
             {{ skill }}
           </q-chip>
@@ -97,69 +113,31 @@
       </div>
       <div class="col-9 q-pa-lg column-two">
         <div id="portfolio">
-          <div class="text-subtitle1">Trajetória Profissional</div>
+          <div class="text-subtitle1">{{ trajectoryPage1.sectionTitle }}</div>
           <hr />
           <q-timeline color="secondary">
             <q-timeline-entry
-              title="Formação Superior"
-              subtitle="Fevereiro de 1998 Dezembro de 2000"
-              ><div class="text-caption text-justify">
-                Tecnólogo em Processamento de Dados na Universidade Católica de Pelotas (UCPel) com
-                Programação e base para Análise de Sistemas. Projeto de conclusão de curso voltado à
-                gestão hoteleira.
-              </div></q-timeline-entry
-            >
-
-            <q-timeline-entry
-              title="Data Bank do Brasil LTDA"
-              subtitle="Maio de 2001 à Julho de 2001"
+              v-for="entry in trajectoryPage1.entries"
+              :key="`${entry.title}-${entry.subtitle}`"
+              :title="entry.title"
+              :subtitle="entry.subtitle"
             >
               <div class="text-caption text-justify">
-                Início da trajetória profissional como Desktop Developer, bancos de dados e
-                integração de sistemas com dispositivos eletrônicos.
-              </div>
-            </q-timeline-entry>
-
-            <q-timeline-entry
-              title="Fundação Educational de S. V. do Palmar"
-              subtitle="Outubro de 2001 à Março de 2003"
-            >
-              <div class="text-caption text-justify">
-                Atuando como Laboratorista na Fundação manteve atividades paralelas de programação
-                criando sistema para Biblioteca da Fundação e distribuiu o sistema em Escola
-                Estadual e Bibliotecas Municipais.
-              </div>
-            </q-timeline-entry>
-
-            <q-timeline-entry
-              title="AG2 Agência de Inteligência Digital"
-              subtitle="Março de 2003 à Novembro de 2007"
-              ><div class="text-caption text-justify">
-                Atuação em projetos para clientes como Embraer, Bradesco, Renner e Grupo Martins.
-                Período marcado pela transição das tecnologias clássicas da Microsoft para .NET.
-                Desenvolveu portais de internet, intranet, extranet, e-commerces. Migrou para
-                ASP.NET/C# enquanto escalava domínio sobre JS, jQuery, AJAX, SQLServer e MySQL.
-              </div></q-timeline-entry
-            >
-            <q-timeline-entry
-              title="Formação de Analistas e Projetistas Orientado a Objetos"
-              subtitle="Outubro de 2006 à Novembro de 2007"
-              ><div class="text-caption text-justify">
-                Formação com duração de 140h e destaque para UML, Análise e projeto Orientado a
-                Objetos e Mapeamento de Modelos OO para Modelos de Entidade e Relacionamento.
+                {{ entry.body }}
                 <q-btn
+                  v-if="entry.certificateKey"
                   flat
                   round
                   dense
                   size="sm"
                   icon="image"
                   class="certificate-entry-link no-print"
-                  @click="openCertificate(certificates[0])"
+                  @click="openCertificate(certificatesByKey[entry.certificateKey])"
                 >
-                  <q-tooltip>Abrir certificado</q-tooltip>
+                  <q-tooltip>{{ $t('certificates.open') }}</q-tooltip>
                 </q-btn>
-              </div></q-timeline-entry
-            >
+              </div>
+            </q-timeline-entry>
             <q-timeline-entry></q-timeline-entry>
           </q-timeline>
         </div>
@@ -186,78 +164,35 @@
         <div class="page-2-content">
           <q-timeline color="secondary">
             <q-timeline-entry
-              title="Fundação CEEE de Seguridade Social"
-              subtitle="Novembro de 2007 à Abril de 2011"
+              v-for="entry in trajectoryPage2.entries"
+              :key="`${entry.title}-${entry.subtitle}`"
+              :title="entry.title"
+              :subtitle="entry.subtitle"
             >
               <div class="text-caption text-justify">
-                Após capacitações em administração de servidores Linux iniciou migração definitiva
-                do ecossistema Microsoft para plataformas open source, direcionando a carreira para
-                PHP, PostgreSQL e MySQL. Na Fundação consolidou essa transição, atuando em projetos
-                de intranet, internet e autoatendimento. Aprofundou conhecimentos em PostgreSQL,
-                backend, APIs, JavaScript, AJAX e jQuery.
+                {{ entry.body }}
               </div>
+
+              <q-list v-if="entry.highlights?.length" dense class="highlight-list q-mt-sm">
+                <q-item
+                  v-for="highlight in entry.highlights"
+                  :key="highlight.title"
+                  class="highlight-item"
+                >
+                  <q-item-section avatar>
+                    <q-icon :name="highlight.icon" size="16px" color="grey-8" />
+                  </q-item-section>
+                  <q-item-section>
+                    <q-item-label class="text-caption text-weight-medium">
+                      {{ highlight.title }}
+                    </q-item-label>
+                    <q-item-label caption class="text-justify">
+                      {{ highlight.body }}
+                    </q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
             </q-timeline-entry>
-            <q-timeline-entry
-              title="Conectaa Desenvolvimento de Sistemas LTDA"
-              subtitle="Agosto de 2014 à Fevereiro de 2021"
-              ><div class="text-caption text-justify">
-                Atuação no desenvolvimento e sustentação de sistemas web em PHP. Adoção de Laravel
-                para Backend e Vue.js/Quasar.dev para Frontend. Estudou Clean Code, Design Patterns
-                e testes automatizados. Atuação em projetos para o Poder Legislativo. Adoção de
-                Docker e primeiro contato com cluster Kubernetes.
-              </div></q-timeline-entry
-            >
-            <q-timeline-entry title="Seventh LTDA" subtitle="Abril de 2021 até hoje"
-              ><div class="text-caption text-justify"></div>
-              <div class="text-caption text-justify">
-                Atuação em sistemas web com PHP/Laravel; APIs e automações em Go; Manutenção e
-                sustentabilidade de sistema críticos de alto impacto; Atuação multidisciplinar com
-                DotNet, Python, Node.js colaborando com projetos de outros setores; Adoção de AI
-                para mentoria e uso com critério para soluções de software; Destaque para:
-              </div>
-              <q-list dense class="highlight-list q-mt-sm">
-                <q-item class="highlight-item">
-                  <q-item-section avatar>
-                    <q-icon name="cloud" size="16px" color="grey-8" />
-                  </q-item-section>
-                  <q-item-section>
-                    <q-item-label class="text-caption text-weight-medium">AWS, Cloud</q-item-label>
-                    <q-item-label caption>
-                      Responsável pela sustentação, monitoramento e evolução de sistemas críticos em
-                      infraestrutura AWS.
-                    </q-item-label>
-                  </q-item-section>
-                </q-item>
-
-                <q-item class="highlight-item">
-                  <q-item-section avatar>
-                    <q-icon name="terminal" size="16px" color="grey-8" />
-                  </q-item-section>
-                  <q-item-section>
-                    <q-item-label class="text-caption text-weight-medium">Go, Python</q-item-label>
-                    <q-item-label caption class="text-justify">
-                      Automações para openSIPS e FreeSWITCH viabilizando integração entre as
-                      soluções da empresa com o ecossistema VoIP.
-                    </q-item-label>
-                  </q-item-section>
-                </q-item>
-
-                <q-item class="highlight-item">
-                  <q-item-section avatar>
-                    <q-icon name="hub" size="16px" color="grey-8" />
-                  </q-item-section>
-                  <q-item-section>
-                    <q-item-label class="text-caption text-weight-medium">DevOps</q-item-label>
-                    <q-item-label caption class="text-justify">
-                      Construção de cluster HA com Docker Swarm, DNS Wildcard, Traefik na borda,
-                      Grafana Stack para observabilidade, WAF e migração do inventário de sistemas
-                      monolíticos legados do setor para containers sob o princípio de Single
-                      Responsibility com secrets e deploys automatizados.
-                    </q-item-label>
-                  </q-item-section>
-                </q-item>
-              </q-list></q-timeline-entry
-            >
           </q-timeline>
         </div>
         <q-card flat bordered class="quote-card">
@@ -265,16 +200,11 @@
             <div class="row no-wrap items-start">
               <q-icon name="format_quote" size="28px" color="grey-7" class="q-mr-sm" />
               <div class="text-caption text-italic text-grey-8">
-                Tenho forte compromisso com a ética, a responsabilidade técnica e o impacto real do
-                software na vida de quem o utiliza. Valorizo soluções que respeitam o usuário final,
-                resolvem problemas concretos e entregam confiança no uso diário. Há uma satisfação
-                especial em ver algo que construí com minha inteligência, experiência e minhas
-                próprias mãos fazer diferença na rotina de alguém, tornando um processo melhor, mais
-                simples ou mais eficiente.
+                {{ $t('personalManifesto.quote') }}
               </div>
             </div>
             <div class="quote-author text-caption text-weight-medium text-grey-8">
-              Carlos R Moraes
+              {{ $t('personalManifesto.author') }}
             </div>
           </q-card-section>
         </q-card>
@@ -287,15 +217,17 @@
       <div class="col-3 column-one">
         <div class="certificates-sidebar">
           <q-icon name="school" size="42px" color="grey-8" />
-          <div class="text-subtitle2 q-mt-sm">Cursos e certificações</div>
+          <div class="text-subtitle2 q-mt-sm">
+            {{ $t('sections.coursesAndCertifications') }}
+          </div>
           <div class="text-caption text-grey-7 q-mt-xs">
-            Formação complementar, treinamentos técnicos e capacitações relevantes.
+            {{ $t('certificates.sidebarDescription') }}
           </div>
         </div>
       </div>
       <div class="col-9 q-pa-lg column-two">
         <div class="certificates-section">
-          <div class="text-subtitle1">Cursos e Certificações</div>
+          <div class="text-subtitle1">{{ $t('sections.coursesAndCertifications') }}</div>
           <hr />
           <q-list bordered separator class="certification-list">
             <q-expansion-item
@@ -357,7 +289,7 @@
                       no-caps
                       size="sm"
                       icon="image"
-                      label="Ver certificado"
+                      :label="$t('certificates.view')"
                       class="certification-certificate-button"
                       @click="openCertificate(record.certificate)"
                     />
@@ -411,7 +343,9 @@
 </template>
 
 <script setup>
-import { computed, ref } from 'vue'
+import { computed, onMounted, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { useRoute, useRouter } from 'vue-router'
 import VueWordCloud from 'vuewordcloud'
 import certDevops from 'src/assets/certs/2022-01-30-devops.jpg'
 import certGolang from 'src/assets/certs/2021-03-16-golang.jpg'
@@ -422,7 +356,35 @@ import certOopAnalystTrainingBack from 'src/assets/certs/2006-10-oop-analyst-tra
 import certOracle from 'src/assets/certs/2008-07-oracle.jpg'
 import certWindows2003Training from 'src/assets/certs/2007-03-windows-2003-training.jpg'
 import certWindows2003TrainingBack from 'src/assets/certs/2007-03-windows-2003-training-back.jpg'
-import certificationRecordsSource from 'src/data/certification-records.json'
+import areasOfExpertiseEnUS from 'src/data/en-US/areas-of-expertise.json'
+import certificationRecordsEnUS from 'src/data/en-US/certification-records.json'
+import professionalTrajectoryEnUS from 'src/data/en-US/professional-trajectory.json'
+import areasOfExpertisePtBR from 'src/data/pt-BR/areas-of-expertise.json'
+import certificationRecordsPtBR from 'src/data/pt-BR/certification-records.json'
+import professionalTrajectoryPtBR from 'src/data/pt-BR/professional-trajectory.json'
+import mainSkills from 'src/data/main-skills.json'
+import trajectoryTags from 'src/data/trajectory-tags.json'
+
+const languageStorageKey = 'portfolio.locale'
+const { locale } = useI18n()
+const route = useRoute()
+const router = useRouter()
+const supportedLocales = ['en-US', 'pt-BR']
+
+const areasOfExpertiseByLocale = {
+  'en-US': areasOfExpertiseEnUS,
+  'pt-BR': areasOfExpertisePtBR,
+}
+
+const certificationRecordsByLocale = {
+  'en-US': certificationRecordsEnUS,
+  'pt-BR': certificationRecordsPtBR,
+}
+
+const professionalTrajectoryByLocale = {
+  'en-US': professionalTrajectoryEnUS,
+  'pt-BR': professionalTrajectoryPtBR,
+}
 
 const certificates = [
   {
@@ -519,205 +481,79 @@ const certificates = [
   },
 ]
 
-const skills = [
-  {
-    name: 'Laravel',
-    value: 1,
-  },
-  {
-    name: 'PHP',
-    value: 1,
-  },
-  {
-    name: 'Go',
-    value: 0.65,
-  },
-  {
-    name: 'Docker',
-    value: 0.85,
-  },
-  {
-    name: 'AWS',
-    value: 0.65,
-  },
-  {
-    name: 'JS|Vue',
-    value: 0.85,
-  },
-  {
-    name: 'Symfony',
-    value: 0.3,
-  },
-  {
-    name: 'DevOps',
-    value: 0.6,
-  },
-]
-
-const coreSkills = [
-  'Backend',
-  'Frontend',
-  'Infraestrutura',
-  'DevOps',
-  'Cloud',
-  'Automações',
-  'VoIP',
-  'Bancos de dados',
-  'Sistemas críticos',
-  'Evolução arquitetural',
-]
-
-const trajectoryTags = [
-  {
-    text: 'PHP',
-    weight: 10,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#202124',
-  },
-  {
-    text: 'Laravel',
-    weight: 10,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#202124',
-  },
-  {
-    text: 'Vue.js',
-    weight: 8,
-    rotation: -90,
-    rotationUnit: 'deg',
-    color: '#333333',
-  },
-  {
-    text: 'Quasar',
-    weight: 6,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#4a4a4a',
-  },
-  {
-    text: 'Go',
-    weight: 8,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#333333',
-  },
-  {
-    text: 'Docker',
-    weight: 8,
-    rotation: 90,
-    rotationUnit: 'deg',
-    color: '#333333',
-  },
-  {
-    text: 'AWS',
-    weight: 7,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#3f3f3f',
-  },
-  {
-    text: 'DevOps',
-    weight: 7,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#3f3f3f',
-  },
-  {
-    text: 'Linux',
-    weight: 6,
-    rotation: -90,
-    rotationUnit: 'deg',
-    color: '#4a4a4a',
-  },
-  {
-    text: 'PostgreSQL',
-    weight: 5,
-    rotation: 90,
-    rotationUnit: 'deg',
-    color: '#5c5c5c',
-  },
-  {
-    text: 'MySQL',
-    weight: 4,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#666666',
-  },
-  {
-    text: 'APIs',
-    weight: 5,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#5c5c5c',
-  },
-  {
-    text: 'VoIP',
-    weight: 4,
-    rotation: -90,
-    rotationUnit: 'deg',
-    color: '#666666',
-  },
-  {
-    text: 'OpenSIPS',
-    weight: 4,
-    rotation: 90,
-    rotationUnit: 'deg',
-    color: '#666666',
-  },
-  {
-    text: 'FreeSWITCH',
-    weight: 4,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#666666',
-  },
-  {
-    text: 'Clean Code',
-    weight: 3,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#777777',
-  },
-  {
-    text: 'Design Patterns',
-    weight: 3,
-    rotation: -90,
-    rotationUnit: 'deg',
-    color: '#777777',
-  },
-  {
-    text: 'AI',
-    weight: 3,
-    rotation: 0,
-    rotationUnit: 'deg',
-    color: '#777777',
-  },
-]
-
 const certificatesByKey = Object.fromEntries(
   certificates.map((certificate) => [certificate.key, certificate]),
 )
 
-const certificationRecords = certificationRecordsSource.map((record) => ({
-  ...record,
-  certificate: certificatesByKey[record.certificateKey],
-}))
+const areasOfExpertise = computed(
+  () => areasOfExpertiseByLocale[locale.value] ?? areasOfExpertiseByLocale['en-US'],
+)
+
+const certificationRecords = computed(() =>
+  (certificationRecordsByLocale[locale.value] ?? certificationRecordsByLocale['en-US']).map(
+    (record) => ({
+      ...record,
+      certificate: certificatesByKey[record.certificateKey],
+    }),
+  ),
+)
+
+const professionalTrajectory = computed(
+  () => professionalTrajectoryByLocale[locale.value] ?? professionalTrajectoryByLocale['en-US'],
+)
+
+const trajectoryPage1 = computed(
+  () =>
+    professionalTrajectory.value.find((page) => page.page === 1) ?? {
+      sectionTitle: '',
+      entries: [],
+    },
+)
+
+const trajectoryPage2 = computed(
+  () =>
+    professionalTrajectory.value.find((page) => page.page === 2) ?? {
+      entries: [],
+    },
+)
 
 const sortedCertificationRecords = computed(() =>
-  [...certificationRecords].sort((a, b) => a.sortDate.localeCompare(b.sortDate)),
+  [...certificationRecords.value].sort((a, b) => a.sortDate.localeCompare(b.sortDate)),
 )
+
+const nextLocale = computed(() => (locale.value === 'en-US' ? 'pt-BR' : 'en-US'))
+const nextLanguageLabel = computed(() => (nextLocale.value === 'pt-BR' ? 'PT-BR' : 'EN-US'))
 
 const certificateDialogOpen = ref(false)
 const selectedCertificate = ref(null)
 const selectedCertificateSlide = ref(null)
+
+function toggleLocale() {
+  locale.value = nextLocale.value
+  localStorage.setItem(languageStorageKey, locale.value)
+}
+
+function normalizeLocale(value) {
+  return typeof value === 'string' && supportedLocales.includes(value) ? value : null
+}
 
 function openCertificate(certificate) {
   selectedCertificate.value = certificate
   selectedCertificateSlide.value = certificate.images[0].src
   certificateDialogOpen.value = true
 }
+
+onMounted(async () => {
+  const routeLocale = normalizeLocale(route.params.locale)
+
+  if (!routeLocale) {
+    return
+  }
+
+  locale.value = routeLocale
+  localStorage.setItem(languageStorageKey, routeLocale)
+  await router.replace('/')
+})
 </script>
 
 <style scoped>
@@ -735,6 +571,23 @@ function openCertificate(certificate) {
 
 div {
   border-style: none;
+}
+
+.language-toggle-sticky {
+  z-index: 20;
+}
+
+.language-toggle {
+  min-width: 104px;
+  padding: 8px 14px;
+  color: #ffffff;
+  background-color: #404040;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
+}
+
+.language-toggle :deep(.q-icon) {
+  font-size: 18px;
 }
 
 .header {
@@ -831,32 +684,32 @@ div {
   background-color: #ffffff;
 }
 
-.skill-list {
+.main-skill-list {
   display: grid;
   gap: 8px;
   padding: 0 12px;
   color: #404040;
 }
 
-.skill-item {
+.main-skill-item {
   display: grid;
   grid-template-columns: 54px 1fr;
   align-items: center;
   column-gap: 8px;
 }
 
-.skill-label {
+.main-skill-label {
   line-height: 1;
 }
 
-.core-skill-tags {
+.area-of-expertise-tags {
   display: flex;
   flex-wrap: wrap;
   gap: 3px;
   padding: 0 12px;
 }
 
-.core-skill-chip {
+.area-of-expertise-chip {
   margin: 0;
   min-height: 20px;
   font-size: 11px;

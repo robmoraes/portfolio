@@ -1,0 +1,128 @@
+[
+  {
+    "text": "PHP",
+    "weight": 10,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#202124"
+  },
+  {
+    "text": "Laravel",
+    "weight": 10,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#202124"
+  },
+  {
+    "text": "Vue.js",
+    "weight": 8,
+    "rotation": -90,
+    "rotationUnit": "deg",
+    "color": "#333333"
+  },
+  {
+    "text": "Quasar",
+    "weight": 6,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#4a4a4a"
+  },
+  {
+    "text": "Go",
+    "weight": 8,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#333333"
+  },
+  {
+    "text": "Docker",
+    "weight": 8,
+    "rotation": 90,
+    "rotationUnit": "deg",
+    "color": "#333333"
+  },
+  {
+    "text": "AWS",
+    "weight": 7,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#3f3f3f"
+  },
+  {
+    "text": "DevOps",
+    "weight": 7,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#3f3f3f"
+  },
+  {
+    "text": "Linux",
+    "weight": 6,
+    "rotation": -90,
+    "rotationUnit": "deg",
+    "color": "#4a4a4a"
+  },
+  {
+    "text": "PostgreSQL",
+    "weight": 5,
+    "rotation": 90,
+    "rotationUnit": "deg",
+    "color": "#5c5c5c"
+  },
+  {
+    "text": "MySQL",
+    "weight": 4,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#666666"
+  },
+  {
+    "text": "APIs",
+    "weight": 5,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#5c5c5c"
+  },
+  {
+    "text": "VoIP",
+    "weight": 4,
+    "rotation": -90,
+    "rotationUnit": "deg",
+    "color": "#666666"
+  },
+  {
+    "text": "OpenSIPS",
+    "weight": 4,
+    "rotation": 90,
+    "rotationUnit": "deg",
+    "color": "#666666"
+  },
+  {
+    "text": "FreeSWITCH",
+    "weight": 4,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#666666"
+  },
+  {
+    "text": "Clean Code",
+    "weight": 3,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#777777"
+  },
+  {
+    "text": "Design Patterns",
+    "weight": 3,
+    "rotation": -90,
+    "rotationUnit": "deg",
+    "color": "#777777"
+  },
+  {
+    "text": "AI",
+    "weight": 3,
+    "rotation": 0,
+    "rotationUnit": "deg",
+    "color": "#777777"
+  }
+]
