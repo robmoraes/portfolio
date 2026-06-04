@@ -1,0 +1,71 @@
+[
+  {
+    "page": 1,
+    "sectionTitle": "Trajetória Profissional",
+    "entries": [
+      {
+        "title": "Formação Superior",
+        "subtitle": "fev/1998 a dez/2000",
+        "body": "Formação superior em Tecnologia em Processamento de Dados pela Universidade Católica de Pelotas (UCPel), com título de Tecnólogo em Processamento de Dados. O curso consolidou fundamentos de programação e análise de sistemas. Projeto de conclusão voltado à gestão hoteleira."
+      },
+      {
+        "title": "Data Bank do Brasil LTDA",
+        "subtitle": "mai/2001 a jul/2001",
+        "body": "Início da trajetória profissional como Desktop Developer, bancos de dados e integração de sistemas com dispositivos eletrônicos."
+      },
+      {
+        "title": "Fundação Educational de S. V. do Palmar",
+        "subtitle": "out/2001 a mar/2003",
+        "body": "Atuando como Laboratorista na Fundação manteve atividades paralelas de programação criando sistema para Biblioteca da Fundação e distribuiu o sistema em Escola Estadual e Bibliotecas Municipais."
+      },
+      {
+        "title": "AG2 Agência de Inteligência Digital",
+        "subtitle": "mar/2003 a nov/2007",
+        "body": "Atuação em projetos para clientes como Embraer, Bradesco, Renner e Grupo Martins. Período marcado pela transição das tecnologias clássicas da Microsoft para .NET. Desenvolveu portais de internet, intranet, extranet, e-commerces. Migrou para ASP.NET/C# enquanto escalava domínio sobre JS, jQuery, AJAX, SQLServer e MySQL."
+      },
+      {
+        "title": "Formação de Analistas e Projetistas Orientado a Objetos",
+        "subtitle": "out/2006 a nov/2007",
+        "body": "Formação com duração de 140h e destaque para UML, Análise e projeto Orientado a Objetos e Mapeamento de Modelos OO para Modelos de Entidade e Relacionamento.",
+        "certificateKey": "oop-analyst-training"
+      }
+    ]
+  },
+  {
+    "page": 2,
+    "entries": [
+      {
+        "title": "Fundação CEEE de Seguridade Social",
+        "subtitle": "nov/2007 a abr/2011",
+        "body": "Após capacitações em administração de servidores Linux iniciou migração definitiva do ecossistema Microsoft para plataformas open source, direcionando a carreira para PHP, PostgreSQL e MySQL. Na Fundação consolidou essa transição, atuando em projetos de intranet, internet e autoatendimento. Aprofundou conhecimentos em PostgreSQL, backend, APIs, JavaScript, AJAX e jQuery."
+      },
+      {
+        "title": "Conectaa Desenvolvimento de Sistemas LTDA",
+        "subtitle": "ago/2014 a fev/2021",
+        "body": "Atuação no desenvolvimento e sustentação de sistemas web em PHP. Adoção de Laravel para Backend e Vue.js/Quasar.dev para Frontend. Estudou Clean Code, Design Patterns e testes automatizados. Atuação em projetos para o Poder Legislativo. Adoção de Docker e primeiro contato com cluster Kubernetes."
+      },
+      {
+        "title": "Seventh LTDA",
+        "subtitle": "abr/2021 até hoje",
+        "body": "Atuação em sistemas web com PHP/Laravel; APIs e automações em Go; Manutenção e sustentabilidade de sistema críticos de alto impacto; Atuação multidisciplinar com DotNet, Python, Node.js colaborando com projetos de outros setores; Adoção de AI para mentoria e uso com critério para soluções de software; Destaque para:",
+        "highlights": [
+          {
+            "icon": "cloud",
+            "title": "AWS, Cloud",
+            "body": "Responsável pela sustentação, monitoramento e evolução de sistemas críticos em infraestrutura AWS."
+          },
+          {
+            "icon": "terminal",
+            "title": "Go, Python",
+            "body": "Automações para openSIPS e FreeSWITCH viabilizando integração entre as soluções da empresa com o ecossistema VoIP."
+          },
+          {
+            "icon": "hub",
+            "title": "DevOps",
+            "body": "Construção de cluster HA com Docker Swarm, DNS Wildcard, Traefik na borda, Grafana Stack para observabilidade, WAF e migração do inventário de sistemas monolíticos legados do setor para containers sob o princípio de Single Responsibility com secrets e deploys automatizados."
+          }
+        ]
+      }
+    ]
+  }
+]
