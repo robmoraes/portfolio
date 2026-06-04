@@ -9,6 +9,23 @@ contract.
 
 ## [Unreleased]
 
+## [0.4.0] - 2026-06-04
+
+### Added
+
+- Added the 2026 Go course certificate image and linked it to the certification
+  records modal.
+- Added a static portfolio QR Code asset to the first-page sidebar.
+
+### Changed
+
+- Improved print reliability for the profile image and skill level bars when
+  browser background graphics are disabled.
+- Improved secondary text contrast in the courses and certifications list.
+- Hid certification expansion icons from print output.
+- Updated the browser tab title to "Rob Moraes Portfolio".
+- Updated the project version to 0.4.0.
+
 ## [0.3.0] - 2026-06-04
 
 ### Added
@@ -67,7 +84,8 @@ contract.
 - Configured the Quasar/Vite build to emit relative asset paths for GitHub
   Pages compatibility.
 
-[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/robmoraes/portfolio/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/robmoraes/portfolio/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/robmoraes/portfolio/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/robmoraes/portfolio/releases/tag/v0.1.0
