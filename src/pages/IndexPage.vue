@@ -1,5 +1,5 @@
 <template>
-  <q-page class="index-page column items-center q-my-xl">
+  <q-page class="index-page column items-center q-my-lg">
     <q-page-sticky position="top-right" :offset="[18, 18]" class="language-toggle-sticky no-print">
       <q-btn
         unelevated
@@ -33,7 +33,7 @@
       </div>
       <div class="col-3 column-one">
         <div id="pictureContainer">
-          <div id="picture"></div>
+          <img id="picture" :src="profilePicture" alt="Carlos Roberto Moraes" />
         </div>
         <div class="social-links">
           <a
@@ -89,12 +89,16 @@
           <div v-for="skill in mainSkills" :key="skill.name" class="main-skill-item">
             <div class="main-skill-label text-caption text-weight-medium">{{ skill.name }}</div>
             <q-linear-progress
+              class="screen-skill-bar"
               :value="skill.value"
               size="7px"
               color="grey-8"
               track-color="grey-4"
               rounded
             />
+            <div class="print-skill-bar">
+              <span :style="{ width: `${skill.value * 100}%` }"></span>
+            </div>
           </div>
         </div>
         <hr class="q-ma-md" />
@@ -113,6 +117,9 @@
           >
             {{ skill }}
           </q-chip>
+        </div>
+        <div class="portfolio-qr">
+          <img :src="portfolioQrCode" alt="Portfolio QR Code" />
         </div>
       </div>
       <div class="col-9 q-pa-lg column-two">
@@ -452,8 +459,11 @@ import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import VueWordCloud from 'vuewordcloud'
+import profilePicture from 'src/assets/about-me-2.png'
+import portfolioQrCode from 'src/assets/portfolio-qr.png'
 import certDevops from 'src/assets/certs/2022-01-30-devops.jpg'
 import certGolang from 'src/assets/certs/2021-03-16-golang.jpg'
+import certGolangFromScratch from 'src/assets/certs/2026-06-04-golang.jpg'
 import certLinuxSslxpc from 'src/assets/certs/2008-05-linux-sslxpc.jpg'
 import certLinuxSslxpi from 'src/assets/certs/2008-08-linux-sslxpi.jpg'
 import certOopAnalystTraining from 'src/assets/certs/2006-10-oop-analyst-training.jpg'
@@ -584,6 +594,18 @@ const certificates = [
       {
         label: 'front',
         src: certDevops,
+      },
+    ],
+  },
+  {
+    key: 'go-2',
+    year: '2026',
+    name: 'Learn Golang from Scratch',
+    src: certGolangFromScratch,
+    images: [
+      {
+        label: 'front',
+        src: certGolangFromScratch,
       },
     ],
   },
@@ -820,6 +842,8 @@ div {
 }
 
 .page-1 .column-one {
+  display: flex;
+  flex-direction: column;
   height: calc(100% - 150px);
 }
 
@@ -833,8 +857,8 @@ div {
   width: 140px;
   height: 140px;
   margin-top: 40px;
-  background-image: url('/src/assets/about-me-2.png');
-  background-size: 140px 140px;
+  object-fit: cover;
+  object-position: center;
   border: 1px solid;
 }
 
@@ -899,6 +923,10 @@ div {
   line-height: 1;
 }
 
+.print-skill-bar {
+  display: none;
+}
+
 .area-of-expertise-tags {
   display: flex;
   flex-wrap: wrap;
@@ -911,6 +939,18 @@ div {
   min-height: 20px;
   font-size: 11px;
   line-height: 1.1;
+}
+
+.portfolio-qr {
+  display: flex;
+  justify-content: center;
+  margin-top: auto;
+  padding-bottom: 22px;
+}
+
+.portfolio-qr img {
+  width: 104px;
+  height: 104px;
 }
 
 .tag-cloud {
@@ -1066,8 +1106,13 @@ div {
   display: flex;
   flex-wrap: wrap;
   gap: 2px 8px;
+  color: #4f4f4f;
   font-size: 10px;
   line-height: 1.2;
+}
+
+.certification-summary :deep(.q-icon) {
+  color: #555555;
 }
 
 .certification-summary-item {
@@ -1153,6 +1198,27 @@ div {
 
   .no-print {
     display: none;
+  }
+
+  .certification-item :deep(.q-expansion-item__toggle-icon) {
+    display: none;
+  }
+
+  .screen-skill-bar {
+    display: none;
+  }
+
+  .print-skill-bar {
+    display: block;
+    width: 100%;
+    height: 7px;
+    border-bottom: 1px solid #b0b0b0;
+  }
+
+  .print-skill-bar span {
+    display: block;
+    height: 0;
+    border-bottom: 6px solid #404040;
   }
 }
 </style>

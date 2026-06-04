@@ -341,7 +341,7 @@
     "date": "2022, Jan",
     "name": "DevOps Ninja: Docker, Kubernetes and Rancher",
     "workload": "18h",
-    "provider": "Jonathan Dias Baraldi",
+    "provider": "Jonathan D Baraldi | Udemy",
     "certificateKey": "devops",
     "topics": [
       "Introduction and environment",
@@ -355,6 +355,26 @@
       "Rancher 2.6.2",
       "Rancher vs OpenShift",
       "Windows containers"
+    ]
+  },
+  {
+    "year": "2026",
+    "icon": "fa-brands fa-golang",
+    "sortDate": "2026-06-04",
+    "date": "2021, Mar to Jun",
+    "name": "Learn Golang from Scratch",
+    "workload": "27h",
+    "provider": "Otávio A Gallego | Udemy",
+    "certificateKey": "go-2",
+    "topics": [
+      "Language fundamentals",
+      "Mini command-line application",
+      "Concurrency",
+      "Automated tests",
+      "Additional fundamentals",
+      "Database",
+      "API - DevBook",
+      "Web application - DevBook"
     ]
   }
 ]

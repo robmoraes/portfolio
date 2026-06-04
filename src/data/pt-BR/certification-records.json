@@ -356,5 +356,25 @@
       "Rancher vs OpenShift",
       "Containers Windows"
     ]
+  },
+  {
+    "year": "2026",
+    "icon": "fa-brands fa-golang",
+    "sortDate": "2026-06-04",
+    "date": "2021, mar a jun",
+    "name": "Aprenda Golang do Zero",
+    "workload": "27h",
+    "provider": "Otávio A Gallego | Udemy",
+    "certificateKey": "go-2",
+    "topics": [
+      "Fundamentos da Linguagem",
+      "Mini Aplicação de Linha de Comando",
+      "Concorrência",
+      "Testes Automatizados",
+      "Fundamentos Adicionais",
+      "Banco de Dados",
+      "API - DevBook",
+      "Aplicação Web - DevBook"
+    ]
   }
 ]
