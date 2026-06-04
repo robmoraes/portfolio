@@ -2,9 +2,24 @@
 // https://v2.quasar.dev/quasar-cli-vite/quasar-config-file
 
 import { defineConfig } from '#q-app/wrappers'
+import { execSync } from 'node:child_process'
+import { readFileSync } from 'node:fs'
 import { fileURLToPath } from 'node:url'
 
+const packageJson = JSON.parse(readFileSync(new URL('./package.json', import.meta.url), 'utf8'))
+
+function getGitCommit() {
+  try {
+    return execSync('git rev-parse --short HEAD', { encoding: 'utf8' }).trim()
+  } catch {
+    return 'local'
+  }
+}
+
 export default defineConfig((ctx) => {
+  const appCommit = getGitCommit()
+  const appBuiltAt = new Date().toISOString()
+
   return {
     // https://v2.quasar.dev/quasar-cli-vite/prefetch-feature
     // preFetch: true,
@@ -48,7 +63,11 @@ export default defineConfig((ctx) => {
       publicPath: './',
       // analyze: true,
       // env: {},
-      // rawDefine: {}
+      rawDefine: {
+        __APP_VERSION__: JSON.stringify(packageJson.version),
+        __APP_COMMIT__: JSON.stringify(appCommit),
+        __APP_BUILT_AT__: JSON.stringify(appBuiltAt),
+      },
       // ignorePublicFolder: true,
       // minify: false,
       // polyfillModulePreload: true,
