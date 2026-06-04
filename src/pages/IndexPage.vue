@@ -14,6 +14,10 @@
       </q-btn>
     </q-page-sticky>
 
+    <q-page-sticky position="bottom-right" :offset="[18, 18]" class="no-print">
+      <q-btn fab icon="help" color="gray" @click="systemInfoDialogOpen = true" />
+    </q-page-sticky>
+
     <!-- PAGE 1 -->
     <div class="row justify-center items-start content-start page page-1">
       <div class="col-12 header">
@@ -339,10 +343,111 @@
         </q-card-section>
       </q-card>
     </q-dialog>
+
+    <q-dialog v-model="systemInfoDialogOpen">
+      <q-card class="system-info-dialog">
+        <q-card-section class="row items-center justify-between q-pb-sm">
+          <div>
+            <div class="text-subtitle1 text-weight-medium">{{ $t('systemInfo.title') }}</div>
+            <div class="text-caption text-grey-7">{{ $t('systemInfo.subtitle') }}</div>
+          </div>
+          <q-btn v-close-popup flat round dense icon="close" />
+        </q-card-section>
+
+        <q-separator />
+
+        <q-card-section class="q-pa-none">
+          <q-list separator>
+            <q-item>
+              <q-item-section avatar>
+                <q-icon name="commit" color="grey-8" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>{{ $t('systemInfo.version') }}</q-item-label>
+                <q-item-label caption>v{{ appVersion }} ({{ appCommit }})</q-item-label>
+                <q-item-label caption>
+                  {{ $t('systemInfo.builtAt') }}: {{ formattedAppBuiltAt }}
+                </q-item-label>
+                <q-item-label caption>
+                  {{ $t('systemInfo.timeZone') }}: {{ browserTimeZone }}
+                </q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section avatar>
+                <q-icon name="fa-brands fa-github" color="grey-8" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>{{ $t('systemInfo.repository.label') }}</q-item-label>
+                <q-item-label caption>{{ $t('systemInfo.repository.description') }}</q-item-label>
+                <div class="system-info-links q-mt-xs">
+                  <a
+                    href="https://github.com/robmoraes/portfolio"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    github.com/robmoraes/portfolio
+                  </a>
+                </div>
+              </q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section avatar>
+                <q-icon name="account_tree" color="grey-8" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>{{ $t('systemInfo.workflow.label') }}</q-item-label>
+                <q-item-label caption>{{ $t('systemInfo.workflow.description') }}</q-item-label>
+                <div class="system-info-links q-mt-xs">
+                  <a
+                    href="https://github.com/robmoraes/engineering-playbook/blob/main/github/branches-commits-and-pull-requests.md"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {{ $t('systemInfo.workflow.link') }}
+                  </a>
+                </div>
+              </q-item-section>
+            </q-item>
+
+            <q-item v-for="item in systemInfoItems" :key="item.label">
+              <q-item-section avatar>
+                <q-icon :name="item.icon" color="grey-8" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>{{ item.label }}</q-item-label>
+                <q-item-label caption>{{ item.description }}</q-item-label>
+              </q-item-section>
+            </q-item>
+
+            <q-item>
+              <q-item-section avatar>
+                <q-icon name="language" color="grey-8" />
+              </q-item-section>
+              <q-item-section>
+                <q-item-label>{{ $t('systemInfo.urls.label') }}</q-item-label>
+                <q-item-label caption>
+                  {{ $t('systemInfo.urls.description') }}
+                </q-item-label>
+                <div class="system-info-links q-mt-xs q-pt-md">
+                  <div v-for="url in systemInfoUrls" :key="url.href" class="text-caption">
+                    {{ url.label }}:
+                    <a :href="url.href" target="_blank" rel="noopener noreferrer">{{ url.href }}</a>
+                  </div>
+                </div>
+              </q-item-section>
+            </q-item>
+          </q-list>
+        </q-card-section>
+      </q-card>
+    </q-dialog>
   </q-page>
 </template>
 
 <script setup>
+/* global __APP_BUILT_AT__, __APP_COMMIT__, __APP_VERSION__ */
 import { computed, onMounted, ref } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
@@ -366,10 +471,13 @@ import mainSkills from 'src/data/main-skills.json'
 import trajectoryTags from 'src/data/trajectory-tags.json'
 
 const languageStorageKey = 'portfolio.locale'
-const { locale } = useI18n()
+const { locale, t } = useI18n()
 const route = useRoute()
 const router = useRouter()
 const supportedLocales = ['en-US', 'pt-BR']
+const appVersion = __APP_VERSION__
+const appCommit = __APP_COMMIT__
+const appBuiltAt = __APP_BUILT_AT__
 
 const areasOfExpertiseByLocale = {
   'en-US': areasOfExpertiseEnUS,
@@ -523,10 +631,62 @@ const sortedCertificationRecords = computed(() =>
 
 const nextLocale = computed(() => (locale.value === 'en-US' ? 'pt-BR' : 'en-US'))
 const nextLanguageLabel = computed(() => (nextLocale.value === 'pt-BR' ? 'PT-BR' : 'EN-US'))
+const browserTimeZone = computed(
+  () => Intl.DateTimeFormat().resolvedOptions().timeZone ?? 'Local timezone',
+)
+const formattedAppBuiltAt = computed(() =>
+  new Intl.DateTimeFormat(locale.value, {
+    year: 'numeric',
+    month: 'short',
+    day: '2-digit',
+    hour: '2-digit',
+    minute: '2-digit',
+    timeZoneName: 'short',
+  }).format(new Date(appBuiltAt)),
+)
 
 const certificateDialogOpen = ref(false)
 const selectedCertificate = ref(null)
 const selectedCertificateSlide = ref(null)
+const systemInfoDialogOpen = ref(false)
+
+const systemInfoItems = computed(() => [
+  {
+    icon: 'fa-brands fa-github',
+    label: t('systemInfo.ci.label'),
+    description: t('systemInfo.ci.description'),
+  },
+  {
+    icon: 'cloud_upload',
+    label: t('systemInfo.cd.label'),
+    description: t('systemInfo.cd.description'),
+  },
+  {
+    icon: 'dns',
+    label: t('systemInfo.domain.label'),
+    description: t('systemInfo.domain.description'),
+  },
+  {
+    icon: 'code',
+    label: t('systemInfo.builtWith.label'),
+    description: t('systemInfo.builtWith.description'),
+  },
+])
+
+const systemInfoUrls = computed(() => [
+  {
+    label: t('systemInfo.urls.portuguese'),
+    href: 'https://portfolio.robmoraes.dev.br/#/pt-BR',
+  },
+  {
+    label: t('systemInfo.urls.english'),
+    href: 'https://portfolio.robmoraes.dev.br/#/en-US',
+  },
+  {
+    label: t('systemInfo.urls.englishFallback'),
+    href: 'https://portfolio.robmoraes.dev.br',
+  },
+])
 
 function toggleLocale() {
   locale.value = nextLocale.value
@@ -588,6 +748,43 @@ div {
 
 .language-toggle :deep(.q-icon) {
   font-size: 18px;
+}
+
+.system-info-sticky {
+  z-index: 20;
+}
+
+.system-info-dialog {
+  width: min(92vw, 520px);
+  max-width: 92vw;
+  border-radius: 8px;
+}
+
+.system-info-dialog :deep(.q-item) {
+  padding: 14px 18px;
+}
+
+.system-info-dialog :deep(.q-item__label--caption) {
+  color: #666666;
+  line-height: 1.4;
+}
+
+.system-info-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.system-info-links a {
+  color: #404040;
+  font-size: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1px solid #9a9a9a;
+}
+
+.system-info-links a:hover {
+  border-color: #404040;
 }
 
 .header {

@@ -9,6 +9,23 @@ contract.
 
 ## [Unreleased]
 
+## [0.3.0] - 2026-06-04
+
+### Added
+
+- Added project documentation with repository structure, commands,
+  internationalization behavior, build/deploy notes and contribution workflow.
+- Added contributor guidelines for agents working in this repository.
+- Added a floating system information modal hidden from print output.
+- Added version, commit, build date/time and browser timezone information to the
+  portfolio UI.
+- Added repository, language URLs, CI/CD, domain/certificate and development
+  workflow details to the system information modal.
+
+### Changed
+
+- Updated the project version to 0.3.0.
+
 ## [0.2.0] - 2026-06-04
 
 ### Added
@@ -50,6 +67,7 @@ contract.
 - Configured the Quasar/Vite build to emit relative asset paths for GitHub
   Pages compatibility.
 
-[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/robmoraes/portfolio/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/robmoraes/portfolio/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/robmoraes/portfolio/releases/tag/v0.1.0
