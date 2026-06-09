@@ -16,12 +16,15 @@ contract.
 - Added an executive English README focused on the professional portfolio
   objective, stack summary, portfolio URL and profile image.
 - Added a Brazilian Portuguese README variant.
+- Added locale navigation links between the English and Brazilian Portuguese
+  README files.
 - Added a technical repository guide with project structure, development
   commands, internationalization, build/deploy and contribution details.
 
 ### Changed
 
 - Moved technical repository details out of the main README.
+- Removed the repeated personal manifesto author line from the portfolio page.
 - Clarified branch naming guidance for `feat/`, `docs/`, `fix/` and `chore/`
   prefixes.
 - Updated the project version to 0.5.0.
