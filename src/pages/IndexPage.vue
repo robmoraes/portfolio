@@ -214,9 +214,6 @@
                 {{ $t('personalManifesto.quote') }}
               </div>
             </div>
-            <div class="quote-author text-caption text-weight-medium text-grey-8">
-              {{ $t('personalManifesto.author') }}
-            </div>
           </q-card-section>
         </q-card>
       </div>
