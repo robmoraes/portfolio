@@ -40,7 +40,8 @@ flow in the browser and check both online and print views.
 ## Commit & Pull Request Guidelines
 
 Use trunk-based, short-lived feature branches from `main`, named with a
-conventional prefix, for example `feat/document-architecture-version`. Commit
+conventional slash prefix. Always use branch prefixes such as `feat/`, `docs/`,
+`fix/`, or `chore/`, for example `feat/document-architecture-version`. Commit
 messages follow Conventional Commits seen in history: `feat: ...`, `docs: ...`,
 and `chore: ...`. Pull requests should target `main`, include a concise summary,
 list validation performed, and mention screenshots or print checks when the UI
