@@ -1,6 +1,6 @@
 # Portfolio Profissional
 
-![Rob Moraes](src/assets/about-me.png)
+[en-US](./README.md)
 
 Este repositorio apresenta o portfolio profissional de Rob Moraes em uma
 experiencia web objetiva, responsiva e bilingue. O objetivo e apoiar conversas
