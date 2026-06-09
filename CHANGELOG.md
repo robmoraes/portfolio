@@ -9,6 +9,23 @@ contract.
 
 ## [Unreleased]
 
+## [0.5.0] - 2026-06-09
+
+### Added
+
+- Added an executive English README focused on the professional portfolio
+  objective, stack summary, portfolio URL and profile image.
+- Added a Brazilian Portuguese README variant.
+- Added a technical repository guide with project structure, development
+  commands, internationalization, build/deploy and contribution details.
+
+### Changed
+
+- Moved technical repository details out of the main README.
+- Clarified branch naming guidance for `feat/`, `docs/`, `fix/` and `chore/`
+  prefixes.
+- Updated the project version to 0.5.0.
+
 ## [0.4.0] - 2026-06-04
 
 ### Added
@@ -84,7 +101,8 @@ contract.
 - Configured the Quasar/Vite build to emit relative asset paths for GitHub
   Pages compatibility.
 
-[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.4.0...HEAD
+[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.5.0...HEAD
+[0.5.0]: https://github.com/robmoraes/portfolio/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/robmoraes/portfolio/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/robmoraes/portfolio/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/robmoraes/portfolio/compare/v0.1.0...v0.2.0
