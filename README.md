@@ -1,34 +1,35 @@
-# Portfolio Profissional
+# Professional Portfolio
 
 ![Rob Moraes](src/assets/about-me.png)
 
-Este repositorio apresenta o portfolio profissional de Rob Moraes em uma
-experiencia web objetiva, responsiva e bilingue. O objetivo e apoiar conversas
-executivas, processos seletivos, networking e avaliacao de senioridade com uma
-visao consolidada sobre trajetoria, competencias, areas de atuacao,
-certificacoes e formacao complementar.
+This repository presents Rob Moraes' professional portfolio as a focused,
+responsive, and bilingual web experience. Its goal is to support executive
+conversations, hiring processes, networking, and seniority evaluation with a
+consolidated view of career trajectory, competencies, areas of expertise,
+certifications, and complementary education.
 
-A aplicacao esta disponivel em:
+The application is available at:
 
 [portfolio.robmoraes.dev.br](https://portfolio.robmoraes.dev.br)
 
-## Proposta
+## Purpose
 
-O portfolio foi desenhado como uma apresentacao profissional viva, com conteudo
-estruturado e facil de manter. A experiencia prioriza clareza, leitura rapida e
-credibilidade, reunindo informacoes que normalmente ficam dispersas em curriculo,
-perfil profissional, certificados e historico de projetos.
+The portfolio was designed as a living professional presentation with structured
+content that is easy to maintain. The experience prioritizes clarity, quick
+reading, and credibility, bringing together information that is usually spread
+across a resume, professional profile, certificates, and project history.
 
-O projeto tambem serve como demonstracao pratica de organizacao de frontend,
-internacionalizacao, publicacao automatizada e separacao entre conteudo e camada
-visual.
+The project also works as a practical demonstration of frontend organization,
+internationalization, automated publishing, and separation between content and
+the visual layer.
 
 ## Stack
 
-Construido como uma SPA com Quasar, Vue 3, Vite, Vue Router em hash mode e Vue
-I18n. O conteudo profissional fica em arquivos JSON localizados por idioma, e a
-interface usa componentes Quasar, Material Icons, Font Awesome e Vue Word Cloud.
+Built as an SPA with Quasar, Vue 3, Vite, Vue Router in hash mode, and Vue I18n.
+The professional content is stored in locale-specific JSON files, and the
+interface uses Quasar components, Material Icons, Font Awesome, and Vue Word
+Cloud.
 
-Os detalhes tecnicos do repositorio, estrutura, comandos de desenvolvimento,
-internacionalizacao, build, deploy e contribuicao estao documentados em
-[docs/repository-guide.md](docs/repository-guide.md).
+Technical repository details, structure, development commands,
+internationalization, build, deployment, and contribution guidance are documented
+in [docs/repository-guide.md](docs/repository-guide.md).
