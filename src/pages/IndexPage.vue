@@ -321,29 +321,12 @@
         </q-card-section>
         <q-separator />
         <q-card-section class="q-pa-none">
-          <q-carousel
+          <iframe
             v-if="selectedCertificate"
-            v-model="selectedCertificateSlide"
-            animated
-            swipeable
-            :arrows="selectedCertificate.images.length > 1"
-            :navigation="selectedCertificate.images.length > 1"
-            control-color="grey-9"
-            class="certificate-carousel"
-          >
-            <q-carousel-slide
-              v-for="image in selectedCertificate.images"
-              :key="image.src"
-              :name="image.src"
-              class="certificate-slide"
-            >
-              <img
-                class="certificate-original"
-                :src="image.src"
-                :alt="`${selectedCertificate.name} certificate ${image.label}`"
-              />
-            </q-carousel-slide>
-          </q-carousel>
+            class="certificate-pdf"
+            :src="selectedCertificate.src"
+            :title="`${selectedCertificate.name} certificate`"
+          />
         </q-card-section>
       </q-card>
     </q-dialog>
@@ -458,16 +441,6 @@ import { useRoute, useRouter } from 'vue-router'
 import VueWordCloud from 'vuewordcloud'
 import profilePicture from 'src/assets/about-me-2.png'
 import portfolioQrCode from 'src/assets/portfolio-qr.png'
-import certDevops from 'src/assets/certs/2022-01-30-devops.jpg'
-import certGolang from 'src/assets/certs/2021-03-16-golang.jpg'
-import certGolangFromScratch from 'src/assets/certs/2026-06-04-golang.jpg'
-import certLinuxSslxpc from 'src/assets/certs/2008-05-linux-sslxpc.jpg'
-import certLinuxSslxpi from 'src/assets/certs/2008-08-linux-sslxpi.jpg'
-import certOopAnalystTraining from 'src/assets/certs/2006-10-oop-analyst-training.jpg'
-import certOopAnalystTrainingBack from 'src/assets/certs/2006-10-oop-analyst-training-back.jpg'
-import certOracle from 'src/assets/certs/2008-07-oracle.jpg'
-import certWindows2003Training from 'src/assets/certs/2007-03-windows-2003-training.jpg'
-import certWindows2003TrainingBack from 'src/assets/certs/2007-03-windows-2003-training-back.jpg'
 import areasOfExpertiseEnUS from 'src/data/en-US/areas-of-expertise.json'
 import certificationRecordsEnUS from 'src/data/en-US/certification-records.json'
 import professionalTrajectoryEnUS from 'src/data/en-US/professional-trajectory.json'
@@ -476,6 +449,24 @@ import certificationRecordsPtBR from 'src/data/pt-BR/certification-records.json'
 import professionalTrajectoryPtBR from 'src/data/pt-BR/professional-trajectory.json'
 import mainSkills from 'src/data/main-skills.json'
 import trajectoryTags from 'src/data/trajectory-tags.json'
+
+// PDF Certificates
+import cert01 from 'src/assets/certificates/01-analista-e-projetista-oo.pdf'
+import cert02 from 'src/assets/certificates/02-extreme-programming.pdf'
+import cert03 from 'src/assets/certificates/03-formacao-windows-2003.pdf'
+import cert04 from 'src/assets/certificates/04-iso-auditor-interno.pdf'
+import cert05 from 'src/assets/certificates/05-iso-gestao-da-qualidade.pdf'
+import cert06 from 'src/assets/certificates/06-linux-conceitos-install-e-admin.pdf'
+import cert07 from 'src/assets/certificates/07-linux-servicos-de-internet.pdf'
+import cert08 from 'src/assets/certificates/08-oracle-data-modeling.pdf'
+import cert09 from 'src/assets/certificates/09-oracle-database-10g.pdf'
+import cert10 from 'src/assets/certificates/10-php-code-igniter-2.pdf'
+import cert11 from 'src/assets/certificates/11-php-orientado-a-objetos.pdf'
+import cert12 from 'src/assets/certificates/12-postgresql-pgcon-2008.pdf'
+import cert13 from 'src/assets/certificates/13-scrum-projetos-ageis.pdf'
+import cert14 from 'src/assets/certificates/14-aprenda-go-do-zero.pdf'
+import cert15 from 'src/assets/certificates/15-devops-docker-kubernetes-e-rancher.pdf'
+import cert16 from 'src/assets/certificates/16-go-explorando-a-lang.pdf'
 
 const languageStorageKey = 'portfolio.locale'
 const { locale, t } = useI18n()
@@ -505,106 +496,98 @@ const certificates = [
   {
     key: 'oop-analyst-training',
     year: '2006',
-    name: 'OOP Analyst Training',
-    src: certOopAnalystTraining,
-    images: [
-      {
-        label: 'front',
-        src: certOopAnalystTraining,
-      },
-      {
-        label: 'back',
-        src: certOopAnalystTrainingBack,
-      },
-    ],
+    name: 'Object-Oriented Analysts and Designers',
+    src: cert01,
+  },
+  {
+    key: 'xp',
+    year: '2010',
+    name: 'Extreme Programming',
+    src: cert02,
   },
   {
     key: 'windows-2003-training',
     year: '2007',
-    name: 'Windows 2003 Training',
-    src: certWindows2003Training,
-    images: [
-      {
-        label: 'front',
-        src: certWindows2003Training,
-      },
-      {
-        label: 'back',
-        src: certWindows2003TrainingBack,
-      },
-    ],
+    name: 'Windows Server 2003',
+    src: cert03,
+  },
+  {
+    key: 'iso-2',
+    year: '2010',
+    name: 'ISO 9001:2008 - Internal Auditor Training',
+    src: cert04,
+  },
+  {
+    key: 'iso-1',
+    year: '2010',
+    name: 'ISO 9001:2008 - Quality Management Fundamentals',
+    src: cert05,
   },
   {
     key: 'linux-sslxpc',
     year: '2008',
-    name: 'Linux SSLXPC',
-    src: certLinuxSslxpc,
-    images: [
-      {
-        label: 'front',
-        src: certLinuxSslxpc,
-      },
-    ],
-  },
-  {
-    key: 'oracle-1',
-    year: '2008',
-    name: 'Oracle',
-    src: certOracle,
-    images: [
-      {
-        label: 'front',
-        src: certOracle,
-      },
-    ],
+    name: 'Linux Professional - Concepts, Installation and Administration',
+    src: cert06,
   },
   {
     key: 'linux-sslxpi',
     year: '2008',
-    name: 'Linux SSLXPI',
-    src: certLinuxSslxpi,
-    images: [
-      {
-        label: 'front',
-        src: certLinuxSslxpi,
-      },
-    ],
+    name: 'Linux Professional - Internet Services',
+    src: cert07,
   },
   {
-    key: 'go-1',
-    year: '2021',
-    name: 'Go (Golang)',
-    src: certGolang,
-    images: [
-      {
-        label: 'front',
-        src: certGolang,
-      },
-    ],
+    key: 'oracle-2',
+    year: '2009',
+    name: 'Data Modeling and Relational Database Design',
+    src: cert08,
   },
   {
-    key: 'devops',
-    year: '2022',
-    name: 'DevOps Ninja',
-    src: certDevops,
-    images: [
-      {
-        label: 'front',
-        src: certDevops,
-      },
-    ],
+    key: 'oracle-1',
+    year: '2008',
+    name: 'Oracle Database 10g: SQL and PL/SQL New Features',
+    src: cert09,
+  },
+  {
+    key: 'php-ci',
+    year: '2011',
+    name: 'CodeIgniter 2 Framework',
+    src: cert10,
+  },
+  {
+    key: 'php-oo',
+    year: '2014',
+    name: 'Object-Oriented PHP',
+    src: cert11,
+  },
+  {
+    key: 'pgcon',
+    year: '2008',
+    name: 'PGCon BR 2008',
+    src: cert12,
+  },
+  {
+    key: 'scrum',
+    year: '2010',
+    name: 'Agile Projects with Scrum',
+    src: cert13,
   },
   {
     key: 'go-2',
     year: '2026',
     name: 'Learn Golang from Scratch',
-    src: certGolangFromScratch,
-    images: [
-      {
-        label: 'front',
-        src: certGolangFromScratch,
-      },
-    ],
+    src: cert14,
+  },
+  {
+    key: 'devops',
+    year: '2022',
+    name: 'DevOps Ninja: Docker, Kubernetes and Rancher',
+    src: cert15,
+  },
+  {
+    key: 'go-1',
+    year: '2021',
+    name: "Go (Golang): Exploring Google's Language",
+    src: cert16,
   },
 ]
 
@@ -666,7 +649,6 @@ const formattedAppBuiltAt = computed(() =>
 
 const certificateDialogOpen = ref(false)
 const selectedCertificate = ref(null)
-const selectedCertificateSlide = ref(null)
 const systemInfoDialogOpen = ref(false)
 
 const systemInfoItems = computed(() => [
@@ -718,7 +700,6 @@ function normalizeLocale(value) {
 
 function openCertificate(certificate) {
   selectedCertificate.value = certificate
-  selectedCertificateSlide.value = certificate.images[0].src
   certificateDialogOpen.value = true
 }
 
@@ -1003,27 +984,15 @@ div {
 }
 
 .certificate-dialog {
-  width: min(92vw, 900px);
-  max-width: 92vw;
+  width: min(96vw, 1100px);
+  max-width: 96vw;
 }
 
-.certificate-carousel {
-  height: 82vh;
-  background-color: #ffffff;
-}
-
-.certificate-slide {
-  display: grid;
-  place-items: center;
-  padding: 0;
-  background-color: #ffffff;
-}
-
-.certificate-original {
+.certificate-pdf {
   display: block;
-  max-width: 100%;
-  max-height: 82vh;
-  object-fit: contain;
+  width: 100%;
+  height: 82vh;
+  border: 0;
   background-color: #ffffff;
 }
 
