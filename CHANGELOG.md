@@ -9,6 +9,25 @@ contract.
 
 ## [Unreleased]
 
+## [0.6.0] - 2026-06-11
+
+### Added
+
+- Added PDF certificate assets for the certification records list, including the
+  new Go, DevOps and Golang certificates.
+
+### Changed
+
+- Replaced the certificate image carousel modal with an embedded PDF viewer.
+- Mapped certificate actions in the training list to PDF assets by certificate
+  key.
+- Updated the project version to 0.6.0.
+
+### Removed
+
+- Removed the legacy JPG certificate assets.
+- Removed the unused `EssentialLink` component.
+
 ## [0.5.0] - 2026-06-09
 
 ### Added
@@ -104,7 +123,8 @@ contract.
 - Configured the Quasar/Vite build to emit relative asset paths for GitHub
   Pages compatibility.
 
-[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/robmoraes/portfolio/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/robmoraes/portfolio/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/robmoraes/portfolio/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/robmoraes/portfolio/compare/v0.2.0...v0.3.0
