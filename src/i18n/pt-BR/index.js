@@ -7,6 +7,18 @@ export default {
     areasOfExpertise: 'Áreas de atuação',
     coursesAndCertifications: 'Cursos e Certificações',
   },
+  navigation: {
+    portfolio: 'Portfólio',
+    resume: 'Currículo',
+    openPortfolio: 'Abrir portfólio completo',
+    openResume: 'Abrir currículo resumido',
+  },
+  resume: {
+    contact: 'Contato',
+    currentSkills: 'Competências atuais',
+    selectedExperience: 'Experiência selecionada',
+    highlights: 'Destaques profissionais',
+  },
   certificates: {
     open: 'Abrir certificado',
     view: 'Ver certificado',

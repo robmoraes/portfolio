@@ -39,13 +39,13 @@ flow in the browser and check both online and print views.
 
 ## Commit & Pull Request Guidelines
 
-Use trunk-based, short-lived feature branches from `main`, named with a
-conventional slash prefix. Always use branch prefixes such as `feat/`, `docs/`,
-`fix/`, or `chore/`, for example `feat/document-architecture-version`. Commit
-messages follow Conventional Commits seen in history: `feat: ...`, `docs: ...`,
-and `chore: ...`. Pull requests should target `main`, include a concise summary,
-list validation performed, and mention screenshots or print checks when the UI
-changes.
+Always create trunk-based, short-lived branches from `main` using the
+`prefix/short-description` format, and write branch names in English. Use
+conventional slash prefixes such as `feat/`, `docs/`, `fix/`, or `chore/`, for
+example `feat/document-architecture-version`. Commit messages follow
+Conventional Commits seen in history: `feat: ...`, `docs: ...`, and `chore: ...`.
+Pull requests should target `main`, include a concise summary, list validation
+performed, and mention screenshots or print checks when the UI changes.
 
 ## Architecture Notes
 
