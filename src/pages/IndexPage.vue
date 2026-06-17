@@ -1,5 +1,19 @@
 <template>
   <q-page class="index-page column items-center q-my-lg">
+    <q-page-sticky position="top-left" :offset="[18, 18]" class="nav-toggle-sticky no-print">
+      <q-btn
+        unelevated
+        rounded
+        no-caps
+        icon="description"
+        :label="$t('navigation.resume')"
+        class="nav-toggle"
+        @click="openResume"
+      >
+        <q-tooltip>{{ $t('navigation.openResume') }}</q-tooltip>
+      </q-btn>
+    </q-page-sticky>
+
     <q-page-sticky position="top-right" :offset="[18, 18]" class="language-toggle-sticky no-print">
       <q-btn
         unelevated
@@ -694,6 +708,10 @@ function toggleLocale() {
   localStorage.setItem(languageStorageKey, locale.value)
 }
 
+function openResume() {
+  router.push('/resume')
+}
+
 function normalizeLocale(value) {
   return typeof value === 'string' && supportedLocales.includes(value) ? value : null
 }
@@ -733,10 +751,12 @@ div {
   border-style: none;
 }
 
+.nav-toggle-sticky,
 .language-toggle-sticky {
   z-index: 20;
 }
 
+.nav-toggle,
 .language-toggle {
   min-width: 104px;
   padding: 8px 14px;
@@ -746,6 +766,7 @@ div {
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
 }
 
+.nav-toggle :deep(.q-icon),
 .language-toggle :deep(.q-icon) {
   font-size: 18px;
 }

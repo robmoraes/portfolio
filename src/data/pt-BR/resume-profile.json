@@ -1,0 +1,92 @@
+{
+  "title": "Currículo",
+  "eyebrow": "Resumo executivo",
+  "name": "Carlos Roberto Moraes Rodrigues Jr.",
+  "role": "Engenheiro de Software | Backend, Cloud & DevOps",
+  "location": "Brasil",
+  "summary": "Engenheiro de Software com mais de duas décadas construindo, sustentando e evoluindo sistemas web. Atuação atual concentrada em backend, cloud, automações, DevOps e modernização de sistemas críticos, combinando profundidade técnica com pragmatismo para entregar software confiável em ambientes reais de operação.",
+  "positioning": [
+    "Sustentação e evolução de sistemas críticos com PHP/Laravel, Go, AWS e containers.",
+    "Perfil hands-on, maduro tecnicamente, com histórico de transitar entre legado, produto e infraestrutura.",
+    "Foco em confiabilidade operacional, clareza arquitetural e entrega incremental sem excesso de complexidade."
+  ],
+  "impactHighlights": [
+    {
+      "icon": "cloud",
+      "title": "Cloud e operação crítica",
+      "body": "Sustentação, monitoramento e evolução de sistemas de alto impacto em infraestrutura AWS."
+    },
+    {
+      "icon": "hub",
+      "title": "Modernização pragmática",
+      "body": "Migração de monólitos legados para containers, com Traefik, WAF, secrets, observabilidade e deploys automatizados."
+    },
+    {
+      "icon": "terminal",
+      "title": "Automações úteis",
+      "body": "APIs e automações em Go e Python integrando openSIPS, FreeSWITCH e soluções do ecossistema VoIP."
+    }
+  ],
+  "skillGroups": [
+    {
+      "title": "Backend e APIs",
+      "items": ["PHP", "Laravel", "Go", "REST APIs", "Node.js", ".NET"]
+    },
+    {
+      "title": "Cloud e DevOps",
+      "items": ["AWS", "Docker", "Docker Swarm", "Traefik", "Grafana Stack", "WAF"]
+    },
+    {
+      "title": "Frontend aplicado",
+      "items": ["Vue.js", "Quasar", "JavaScript", "UX pragmática"]
+    },
+    {
+      "title": "Dados e arquitetura",
+      "items": ["PostgreSQL", "MySQL", "SQL Server", "modelagem", "evolução de legado"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Seventh LTDA",
+      "role": "Software Engineer",
+      "period": "abr/2021 até hoje",
+      "body": "Atuação em sistemas web, APIs, automações e sustentação de aplicações críticas.",
+      "bullets": [
+        "Evolução de sistemas PHP/Laravel e colaboração multidisciplinar com Go, Python, Node.js e .NET.",
+        "Responsabilidade por sustentação, observabilidade e melhorias operacionais em AWS.",
+        "Uso criterioso de IA como apoio técnico para mentoria, análise e construção de soluções."
+      ]
+    },
+    {
+      "company": "Conectaa Desenvolvimento de Sistemas LTDA",
+      "role": "Software Developer",
+      "period": "ago/2014 a fev/2021",
+      "body": "Desenvolvimento e sustentação de sistemas web, especialmente para o Poder Legislativo.",
+      "bullets": [
+        "Adoção de Laravel no backend e Vue.js/Quasar no frontend.",
+        "Aplicação de Clean Code, Design Patterns, testes automatizados e containers."
+      ]
+    },
+    {
+      "company": "Base técnica anterior",
+      "role": "Desenvolvimento web, bancos de dados e open source",
+      "period": "2001 a 2011",
+      "body": "Formação profissional em projetos para internet, intranet, extranet, e-commerce, bancos de dados e migração de stack Microsoft para Linux, PHP e PostgreSQL.",
+      "bullets": []
+    }
+  ],
+  "education": {
+    "title": "Formação",
+    "body": "Tecnólogo em Processamento de Dados pela Universidade Católica de Pelotas."
+  },
+  "selectedTraining": {
+    "title": "Formações selecionadas",
+    "items": [
+      "Go: fundamentos, concorrência, testes, APIs e aplicações web",
+      "DevOps com Docker, Kubernetes e Rancher",
+      "Análise e Projeto Orientado a Objetos, UML e modelagem",
+      "SQL, PL/SQL, PostgreSQL e modelagem relacional"
+    ]
+  },
+  "portfolioCallout": "Versão digital deste currículo disponível para acesso, compartilhamento e impressão."
+}

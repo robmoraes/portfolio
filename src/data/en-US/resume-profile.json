@@ -1,0 +1,92 @@
+{
+  "title": "Resume",
+  "eyebrow": "Executive summary",
+  "name": "Carlos Roberto Moraes Rodrigues Jr.",
+  "role": "Software Engineer | Backend, Cloud & DevOps",
+  "location": "Brazil",
+  "summary": "Software Engineer with more than two decades building, sustaining and evolving web systems. Current work is centered on backend engineering, cloud, automation, DevOps and modernization of critical systems, combining technical depth with pragmatic delivery for real production environments.",
+  "positioning": [
+    "Sustains and evolves critical systems with PHP/Laravel, Go, AWS and containers.",
+    "Hands-on senior profile with a track record across legacy systems, product delivery and infrastructure.",
+    "Focused on operational reliability, clear architecture and incremental delivery without unnecessary complexity."
+  ],
+  "impactHighlights": [
+    {
+      "icon": "cloud",
+      "title": "Cloud and critical operation",
+      "body": "Sustaining, monitoring and evolving high-impact systems on AWS infrastructure."
+    },
+    {
+      "icon": "hub",
+      "title": "Pragmatic modernization",
+      "body": "Migration of legacy monoliths to containers with Traefik, WAF, secrets, observability and automated deployments."
+    },
+    {
+      "icon": "terminal",
+      "title": "Useful automation",
+      "body": "APIs and automations in Go and Python integrating openSIPS, FreeSWITCH and VoIP ecosystem solutions."
+    }
+  ],
+  "skillGroups": [
+    {
+      "title": "Backend and APIs",
+      "items": ["PHP", "Laravel", "Go", "REST APIs", "Node.js", ".NET"]
+    },
+    {
+      "title": "Cloud and DevOps",
+      "items": ["AWS", "Docker", "Docker Swarm", "Traefik", "Grafana Stack", "WAF"]
+    },
+    {
+      "title": "Applied frontend",
+      "items": ["Vue.js", "Quasar", "JavaScript", "pragmatic UX"]
+    },
+    {
+      "title": "Data and architecture",
+      "items": ["PostgreSQL", "MySQL", "SQL Server", "data modeling", "legacy evolution"]
+    }
+  ],
+  "experience": [
+    {
+      "company": "Seventh LTDA",
+      "role": "Software Engineer",
+      "period": "Apr/2021 to present",
+      "body": "Web systems, APIs, automations and critical application sustainment.",
+      "bullets": [
+        "Evolving PHP/Laravel systems and collaborating across Go, Python, Node.js and .NET initiatives.",
+        "Responsible for sustainment, observability and operational improvements on AWS.",
+        "Careful use of AI as technical support for mentoring, analysis and software solution design."
+      ]
+    },
+    {
+      "company": "Conectaa Desenvolvimento de Sistemas LTDA",
+      "role": "Software Developer",
+      "period": "Aug/2014 to Feb/2021",
+      "body": "Development and maintenance of web systems, especially for the Legislative Branch.",
+      "bullets": [
+        "Adopted Laravel for backend and Vue.js/Quasar for frontend delivery.",
+        "Applied Clean Code, Design Patterns, automated testing and containers."
+      ]
+    },
+    {
+      "company": "Earlier technical foundation",
+      "role": "Web development, databases and open source",
+      "period": "2001 to 2011",
+      "body": "Professional foundation across internet, intranet, extranet, e-commerce, databases and migration from Microsoft stacks to Linux, PHP and PostgreSQL.",
+      "bullets": []
+    }
+  ],
+  "education": {
+    "title": "Education",
+    "body": "Technologist in Data Processing from Universidade Católica de Pelotas."
+  },
+  "selectedTraining": {
+    "title": "Selected training",
+    "items": [
+      "Go: fundamentals, concurrency, tests, APIs and web applications",
+      "DevOps with Docker, Kubernetes and Rancher",
+      "Object-Oriented Analysis and Design, UML and modeling",
+      "SQL, PL/SQL, PostgreSQL and relational modeling"
+    ]
+  },
+  "portfolioCallout": "Digital version of this resume available for access, sharing and printing."
+}
