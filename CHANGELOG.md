@@ -9,6 +9,20 @@ contract.
 
 ## [Unreleased]
 
+## [0.7.0] - 2026-06-17
+
+### Added
+
+- Added a focused resume route at `/#/resume` with bilingual executive resume
+  content for recruiters.
+- Added navigation between the complete portfolio and the resume page.
+- Added a dedicated resume QR Code asset pointing to the digital resume URL.
+
+### Changed
+
+- Updated branch naming guidance to require trunk-based English branch names.
+- Updated the project version to 0.7.0.
+
 ## [0.6.0] - 2026-06-11
 
 ### Added
@@ -123,7 +137,8 @@ contract.
 - Configured the Quasar/Vite build to emit relative asset paths for GitHub
   Pages compatibility.
 
-[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/robmoraes/portfolio/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/robmoraes/portfolio/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/robmoraes/portfolio/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/robmoraes/portfolio/compare/v0.3.0...v0.4.0
