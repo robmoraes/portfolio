@@ -63,11 +63,6 @@ export default defineConfig((ctx) => {
       publicPath: './',
       // analyze: true,
       // env: {},
-      rawDefine: {
-        __APP_VERSION__: JSON.stringify(packageJson.version),
-        __APP_COMMIT__: JSON.stringify(appCommit),
-        __APP_BUILT_AT__: JSON.stringify(appBuiltAt),
-      },
       // ignorePublicFolder: true,
       // minify: false,
       // polyfillModulePreload: true,
@@ -75,6 +70,12 @@ export default defineConfig((ctx) => {
 
       extendViteConf(viteConf) {
         viteConf.base = './'
+        viteConf.define = {
+          ...viteConf.define,
+          __APP_VERSION__: JSON.stringify(packageJson.version),
+          __APP_COMMIT__: JSON.stringify(appCommit),
+          __APP_BUILT_AT__: JSON.stringify(appBuiltAt),
+        }
       },
       // viteVuePluginOptions: {},
 
