@@ -12,7 +12,9 @@
     "test": "echo \"No test specified\" && exit 0",
     "dev": "quasar dev",
     "build": "quasar build",
-    "postinstall": "quasar prepare"
+    "postinstall": "quasar prepare",
+    "resume:generate": "node scripts/generate-ats-resume.mjs",
+    "resume:validate": "node scripts/validate-ats-resume.mjs"
   },
   "dependencies": {
     "@quasar/extras": "^1.16.4",
