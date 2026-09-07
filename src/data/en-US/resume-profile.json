@@ -1,92 +1,161 @@
 {
-  "title": "Resume",
-  "eyebrow": "Executive summary",
-  "name": "Carlos Roberto Moraes Rodrigues Jr.",
-  "role": "Software Engineer | Backend, Cloud & DevOps",
-  "location": "Brazil",
-  "summary": "Software Engineer with more than two decades building, sustaining and evolving web systems. Current work is centered on backend engineering, cloud, automation, DevOps and modernization of critical systems, combining technical depth with pragmatic delivery for real production environments.",
+  "eyebrow": "Professional resume",
+  "name": "Carlos R Moraes Rodrigues",
+  "role": "Senior DevOps Engineer",
+  "tagline": "DevOps and Platform Engineering backed by a strong software engineering foundation",
+  "location": "Palhoça, Santa Catarina, Brazil",
+  "summary": "Software engineer with more than 20 years of experience, including the last five years working directly on critical systems and production AWS infrastructure. His backend background evolved into DevOps and Platform Engineering through legacy application modernization, operational automation and the delivery of more reliable environments.",
   "positioning": [
-    "Sustains and evolves critical systems with PHP/Laravel, Go, AWS and containers.",
-    "Hands-on senior profile with a track record across legacy systems, product delivery and infrastructure.",
-    "Focused on operational reliability, clear architecture and incremental delivery without unnecessary complexity."
+    "Investigates issues across applications, runtimes, containers, Linux, networking, observability and cloud infrastructure.",
+    "Combines hands-on execution, technical leadership, risk management and clear operational communication."
+  ],
+  "technicalFoundation": "More than two decades building and sustaining web systems provide the foundation for platform decisions grounded in real application needs.",
+  "foundationSkills": [
+    "PHP, Laravel, APIs and integrations",
+    "Linux and relational databases",
+    "Legacy system modernization"
+  ],
+  "atsCallout": "Two-page Portuguese PDF optimized for recruitment systems.",
+  "practices": [
+    "DevOps",
+    "Platform Engineering",
+    "FinOps",
+    "SRE foundations",
+    "Incident management",
+    "Change management",
+    "Technical leadership"
   ],
   "impactHighlights": [
     {
       "icon": "cloud",
-      "title": "Cloud and critical operation",
-      "body": "Sustaining, monitoring and evolving high-impact systems on AWS infrastructure."
+      "metric": "AWS",
+      "title": "Production infrastructure",
+      "body": "Operation of critical systems with close attention to availability, security and cost."
     },
     {
       "icon": "hub",
-      "title": "Pragmatic modernization",
-      "body": "Migration of legacy monoliths to containers with Traefik, WAF, secrets, observability and automated deployments."
+      "metric": "3 AZs",
+      "title": "Highly available edge",
+      "body": "Migration to ALB, ACM and distributed Traefik instances, validated before cutover."
     },
     {
-      "icon": "terminal",
-      "title": "Useful automation",
-      "body": "APIs and automations in Go and Python integrating openSIPS, FreeSWITCH and VoIP ecosystem solutions."
+      "icon": "trending_down",
+      "metric": ">99%",
+      "title": "Inter-AZ traffic reduction",
+      "body": "System-level diagnosis correlating billing, metrics, networking and processes."
+    },
+    {
+      "icon": "inventory_2",
+      "metric": "100+",
+      "title": "AWS resources classified",
+      "body": "Inventory and governance supporting ownership and future cost allocation."
     }
   ],
   "skillGroups": [
     {
-      "title": "Backend and APIs",
-      "items": ["PHP", "Laravel", "Go", "REST APIs", "Node.js", ".NET"]
+      "title": "Cloud",
+      "items": ["AWS", "EC2", "RDS", "S3", "VPC", "IAM", "ALB", "ACM", "EFS", "CloudWatch"]
     },
     {
-      "title": "Cloud and DevOps",
-      "items": ["AWS", "Docker", "Docker Swarm", "Traefik", "Grafana Stack", "WAF"]
+      "title": "Containers and edge",
+      "items": ["Docker", "Docker Swarm", "Traefik", "Nginx", "WAF"]
     },
     {
-      "title": "Applied frontend",
-      "items": ["Vue.js", "Quasar", "JavaScript", "pragmatic UX"]
+      "title": "Infrastructure as Code (IaC) and automation",
+      "items": ["Terraform", "Ansible", "Python", "Bash"]
     },
     {
-      "title": "Data and architecture",
-      "items": ["PostgreSQL", "MySQL", "SQL Server", "data modeling", "legacy evolution"]
+      "title": "CI/CD",
+      "items": ["GitHub Actions", "Bitbucket Pipelines"]
+    },
+    {
+      "title": "Observability and FinOps",
+      "items": ["Grafana", "Prometheus", "Loki", "Alloy", "CloudWatch", "FinOps"]
     }
   ],
   "experience": [
     {
-      "company": "Seventh LTDA",
-      "role": "Software Engineer",
-      "period": "Apr/2021 to present",
-      "body": "Web systems, APIs, automations and critical application sustainment.",
+      "company": "Seventh",
+      "role": "Senior Developer — working in DevOps and Platform Engineering",
+      "period": "Apr/2021 – present",
+      "location": "Palhoça, Brazil",
+      "body": "Work focused on critical systems, AWS infrastructure, application modernization and evolution of the container platform.",
       "bullets": [
-        "Evolving PHP/Laravel systems and collaborating across Go, Python, Node.js and .NET initiatives.",
-        "Responsible for sustainment, observability and operational improvements on AWS.",
-        "Careful use of AI as technical support for mentoring, analysis and software solution design."
+        "Operates and evolves production AWS infrastructure with EC2, RDS, S3, VPC, EFS, IAM and CloudWatch.",
+        "Built and operates a Docker Swarm platform; evolved the edge to ALB, ACM and Traefik distributed across three Availability Zones.",
+        "Led the modernization of legacy PHP applications into containerized workloads with Nginx, WAF, queues, schedulers, secrets and health checks.",
+        "Implemented observability with Grafana, Prometheus, Loki and Alloy, including dashboards, alerts and runbooks.",
+        "Diagnosed unwanted inter-AZ traffic and validated a reduction greater than 99%; inventoried and classified more than 100 AWS resources for governance and FinOps.",
+        "Automates deployments and operations with Terraform, Python, Bash and Bitbucket Pipelines while documenting changes and risks."
       ]
     },
     {
-      "company": "Conectaa Desenvolvimento de Sistemas LTDA",
-      "role": "Software Developer",
-      "period": "Aug/2014 to Feb/2021",
-      "body": "Development and maintenance of web systems, especially for the Legislative Branch.",
+      "company": "Conectaa Sistemas",
+      "role": "Senior PHP Developer",
+      "period": "Aug/2014 – Feb/2021",
+      "location": "Florianópolis, Brazil",
+      "body": "Developed and sustained corporate web applications, integrations and legacy systems for institutional clients.",
       "bullets": [
-        "Adopted Laravel for backend and Vue.js/Quasar for frontend delivery.",
-        "Applied Clean Code, Design Patterns, automated testing and containers."
+        "Worked with PHP, Laravel, Drupal, APIs and integration services.",
+        "Supported critical applications in Linux environments for legislative institutions."
       ]
     },
     {
-      "company": "Earlier technical foundation",
-      "role": "Web development, databases and open source",
-      "period": "2001 to 2011",
-      "body": "Professional foundation across internet, intranet, extranet, e-commerce, databases and migration from Microsoft stacks to Linux, PHP and PostgreSQL.",
+      "company": "Self-employed",
+      "role": "Freelance Web Developer",
+      "period": "2011 – 2014",
+      "location": "",
+      "body": "Developed and maintained web applications with PHP, JavaScript, relational databases and Linux while balancing independent projects with continued study of Clean Code, Design Patterns, architecture and automated testing.",
+      "bullets": []
+    },
+    {
+      "company": "Fundação CEEE de Seguridade Social",
+      "role": "Mid-level PHP Developer",
+      "period": "Nov/2007 – Mar/2011",
+      "location": "Porto Alegre, Brazil",
+      "body": "Developed and sustained internal corporate and self-service systems with PHP, CodeIgniter and PostgreSQL.",
+      "bullets": []
+    },
+    {
+      "company": "Sapient AG2",
+      "role": "Systems Developer",
+      "period": "Jan/2003 – Nov/2007",
+      "location": "Porto Alegre, Brazil",
+      "body": "Developed web applications and corporate systems with Microsoft .NET and PHP for financial services, industrial and retail clients.",
+      "bullets": []
+    },
+    {
+      "company": "Fundação Educacional and Data Bank do Brasil",
+      "role": "Early software development experience",
+      "period": "2001 – 2003",
+      "location": "Rio Grande do Sul, Brazil",
+      "body": "Developed desktop systems, library solutions, databases and integrations with electronic devices.",
       "bullets": []
     }
   ],
-  "education": {
-    "title": "Education",
-    "body": "Technologist in Data Processing from Universidade Católica de Pelotas."
-  },
-  "selectedTraining": {
-    "title": "Selected training",
-    "items": [
-      "Go: fundamentals, concurrency, tests, APIs and web applications",
-      "DevOps with Docker, Kubernetes and Rancher",
-      "Object-Oriented Analysis and Design, UML and modeling",
-      "SQL, PL/SQL, PostgreSQL and relational modeling"
-    ]
-  },
-  "portfolioCallout": "Digital version of this resume available for access, sharing and printing."
+  "projects": [
+    {
+      "name": "aws-swarm-lab",
+      "body": "Public high-availability Docker Swarm lab on AWS, provisioned with Terraform and configured with Ansible, including ALB, ACM, EFS and Traefik.",
+      "href": "https://github.com/robmoraes/aws-swarm-lab",
+      "linkLabel": "robmoraes/aws-swarm-lab"
+    },
+    {
+      "name": "Pinleaf",
+      "body": "Open-source Linux desktop application written in Python, with tests, CI, GitHub Pages, Debian packaging and automated releases through GitHub Actions.",
+      "href": "https://github.com/robmoraes/pinleaf",
+      "linkLabel": "robmoraes/pinleaf"
+    }
+  ],
+  "education": [
+    {
+      "title": "Technology Degree in Data Processing",
+      "institution": "Universidade Católica de Pelotas",
+      "period": "1998–2000"
+    }
+  ],
+  "selectedTraining": [
+    "DevOps Ninja: Docker, Kubernetes e Rancher — Udemy, Jan/2022, 18h",
+    "Go training: fundamentals, concurrency, testing, APIs and web applications — 2021"
+  ]
 }

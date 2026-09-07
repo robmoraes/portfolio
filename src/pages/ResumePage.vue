@@ -28,147 +28,229 @@
       </q-btn>
     </q-page-sticky>
 
-    <div class="resume-sheet">
-      <header class="resume-header">
-        <div>
-          <div class="resume-eyebrow">{{ resumeProfile.eyebrow }}</div>
-          <h1>{{ resumeProfile.name }}</h1>
-          <p>{{ resumeProfile.role }}</p>
-        </div>
-      </header>
+    <main class="resume-document">
+      <section class="resume-sheet resume-sheet-primary" :aria-label="$t('resume.firstPage')">
+        <header class="resume-header">
+          <div class="resume-heading">
+            <div class="resume-eyebrow">{{ resumeProfile.eyebrow }}</div>
+            <h1>{{ resumeProfile.name }}</h1>
+            <p class="resume-role">{{ resumeProfile.role }}</p>
+            <p class="resume-tagline">{{ resumeProfile.tagline }}</p>
+          </div>
+          <span class="page-number" aria-hidden="true">01 / 02</span>
+        </header>
 
-      <aside class="resume-sidebar">
-        <div class="picture-container">
-          <img class="picture" :src="profilePicture" alt="Carlos Roberto Moraes" />
-        </div>
+        <aside class="resume-sidebar">
+          <div class="picture-container">
+            <img class="picture" :src="profilePicture" :alt="resumeProfile.name" />
+          </div>
 
-        <section class="sidebar-section contact-section">
-          <h2>{{ $t('resume.contact') }}</h2>
+          <section class="sidebar-section contact-section">
+            <h2>{{ $t('resume.contact') }}</h2>
+            <div class="contact-link contact-location">
+              <q-icon name="place" size="15px" />
+              <span>{{ resumeProfile.location }}</span>
+            </div>
+            <a
+              v-for="contact in contacts"
+              :key="contact.href"
+              class="contact-link"
+              :href="contact.href"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <q-icon :name="contact.icon" size="15px" />
+              <span>{{ contact.label }}</span>
+            </a>
+          </section>
+
+          <section class="sidebar-section foundation-section">
+            <h2>{{ $t('resume.technicalFoundation') }}</h2>
+            <p>{{ resumeProfile.technicalFoundation }}</p>
+            <ul class="compact-list">
+              <li v-for="item in resumeProfile.foundationSkills" :key="item">{{ item }}</li>
+            </ul>
+          </section>
+
           <a
-            v-for="contact in contacts"
-            :key="contact.href"
-            class="contact-link"
-            :href="contact.href"
+            class="ats-download"
+            href="/carlos-moraes-rodrigues-devops-senior.pdf"
             target="_blank"
             rel="noopener noreferrer"
+            download
           >
-            <q-icon :name="contact.icon" size="15px" />
-            <span>{{ contact.label }}</span>
+            <q-icon name="download" size="22px" />
+            <span>
+              <strong>{{ $t('resume.downloadAts') }}</strong>
+              <small>{{ resumeProfile.atsCallout }}</small>
+            </span>
           </a>
-        </section>
+        </aside>
 
-        <section class="sidebar-section">
-          <h2>{{ $t('sections.mainSkills') }}</h2>
-          <div class="resume-skill-list">
-            <div v-for="skill in mainSkills" :key="skill.name" class="resume-skill-item">
-              <div class="resume-skill-label">{{ skill.name }}</div>
-              <q-linear-progress
-                class="screen-skill-bar"
-                :value="skill.value"
-                size="7px"
-                color="grey-8"
-                track-color="grey-4"
-                rounded
-              />
-              <div class="print-skill-bar">
-                <span :style="{ width: `${skill.value * 100}%` }"></span>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="sidebar-section">
-          <h2>{{ resumeProfile.selectedTraining.title }}</h2>
-          <ul class="compact-list">
-            <li v-for="item in resumeProfile.selectedTraining.items" :key="item">{{ item }}</li>
-          </ul>
-        </section>
-
-        <section class="sidebar-section portfolio-section">
-          <img :src="resumeQrCode" alt="Resume QR Code" />
-          <p>{{ resumeProfile.portfolioCallout }}</p>
-        </section>
-      </aside>
-
-      <main class="resume-content">
-        <section class="summary-section">
-          <h2>{{ resumeProfile.title }}</h2>
-          <p>{{ resumeProfile.summary }}</p>
-          <ul class="positioning-list">
-            <li v-for="item in resumeProfile.positioning" :key="item">{{ item }}</li>
-          </ul>
-        </section>
-
-        <section class="impact-grid" :aria-label="$t('resume.highlights')">
-          <article
-            v-for="item in resumeProfile.impactHighlights"
-            :key="item.title"
-            class="impact-item"
-          >
-            <q-icon :name="item.icon" size="22px" />
-            <div>
-              <h3>{{ item.title }}</h3>
-              <p>{{ item.body }}</p>
-            </div>
-          </article>
-        </section>
-
-        <section class="section-block">
-          <h2>{{ $t('resume.currentSkills') }}</h2>
-          <div class="skill-group-grid">
-            <article
-              v-for="group in resumeProfile.skillGroups"
-              :key="group.title"
-              class="skill-group"
-            >
-              <h3>{{ group.title }}</h3>
-              <div class="skill-tags">
-                <q-chip
-                  v-for="item in group.items"
-                  :key="item"
-                  dense
-                  square
-                  color="grey-3"
-                  text-color="grey-10"
-                  class="skill-chip"
-                >
-                  {{ item }}
-                </q-chip>
-              </div>
-            </article>
-          </div>
-        </section>
-
-        <section class="section-block experience-section">
-          <h2>{{ $t('resume.selectedExperience') }}</h2>
-          <article
-            v-for="entry in resumeProfile.experience"
-            :key="entry.company"
-            class="experience-item"
-          >
-            <div class="experience-heading">
-              <div>
-                <h3>{{ entry.company }}</h3>
-                <p>{{ entry.role }}</p>
-              </div>
-              <span>{{ entry.period }}</span>
-            </div>
-            <p>{{ entry.body }}</p>
-            <ul v-if="entry.bullets.length" class="compact-list">
-              <li v-for="bullet in entry.bullets" :key="bullet">{{ bullet }}</li>
+        <div class="resume-content">
+          <section class="summary-section">
+            <h2>{{ $t('resume.profile') }}</h2>
+            <p>{{ resumeProfile.summary }}</p>
+            <ul class="positioning-list">
+              <li v-for="item in resumeProfile.positioning" :key="item">{{ item }}</li>
             </ul>
-          </article>
-        </section>
+          </section>
 
-        <section class="education-strip">
-          <q-icon name="school" size="20px" />
-          <div>
-            <h2>{{ resumeProfile.education.title }}</h2>
-            <p>{{ resumeProfile.education.body }}</p>
+          <section class="impact-section">
+            <h2>{{ $t('resume.highlights') }}</h2>
+            <div class="impact-grid">
+              <article
+                v-for="item in resumeProfile.impactHighlights"
+                :key="item.title"
+                class="impact-item"
+              >
+                <div class="impact-heading">
+                  <q-icon :name="item.icon" size="18px" />
+                  <strong>{{ item.metric }}</strong>
+                </div>
+                <h3>{{ item.title }}</h3>
+                <p>{{ item.body }}</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="section-block capabilities-section">
+            <h2>{{ $t('resume.currentSkills') }}</h2>
+            <div class="skill-group-grid">
+              <article
+                v-for="group in resumeProfile.skillGroups"
+                :key="group.title"
+                class="skill-group"
+              >
+                <h3>{{ group.title }}</h3>
+                <div class="skill-tags">
+                  <q-chip
+                    v-for="item in group.items"
+                    :key="item"
+                    dense
+                    square
+                    color="blue-grey-1"
+                    text-color="blue-grey-10"
+                    class="skill-chip"
+                  >
+                    {{ item }}
+                  </q-chip>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section v-if="featuredExperience" class="section-block experience-section">
+            <h2>{{ $t('resume.featuredExperience') }}</h2>
+            <article class="experience-item featured-experience">
+              <div class="experience-heading">
+                <div>
+                  <h3>{{ featuredExperience.role }}</h3>
+                  <p>
+                    <strong>{{ featuredExperience.company }}</strong>
+                    <span v-if="featuredExperience.location">
+                      · {{ featuredExperience.location }}
+                    </span>
+                  </p>
+                </div>
+                <span>{{ featuredExperience.period }}</span>
+              </div>
+              <p>{{ featuredExperience.body }}</p>
+              <ul class="compact-list">
+                <li v-for="bullet in featuredExperience.bullets" :key="bullet">{{ bullet }}</li>
+              </ul>
+            </article>
+          </section>
+        </div>
+      </section>
+
+      <section class="resume-sheet resume-sheet-secondary" :aria-label="$t('resume.secondPage')">
+        <header class="resume-header resume-header-compact">
+          <div class="resume-heading">
+            <div class="resume-eyebrow">{{ $t('resume.secondPage') }}</div>
+            <h1>{{ resumeProfile.name }}</h1>
+            <p class="resume-role">{{ resumeProfile.role }}</p>
           </div>
-        </section>
-      </main>
-    </div>
+          <span class="page-number" aria-hidden="true">02 / 02</span>
+        </header>
+
+        <aside class="resume-sidebar secondary-sidebar">
+          <section class="sidebar-section">
+            <h2>{{ $t('resume.practices') }}</h2>
+            <div class="practice-tags">
+              <span v-for="practice in resumeProfile.practices" :key="practice">
+                {{ practice }}
+              </span>
+            </div>
+          </section>
+
+          <section class="sidebar-section education-section">
+            <h2>{{ $t('resume.education') }}</h2>
+            <article v-for="item in resumeProfile.education" :key="item.title">
+              <h3>{{ item.title }}</h3>
+              <p>{{ item.institution }}</p>
+              <span>{{ item.period }}</span>
+            </article>
+          </section>
+
+          <section class="sidebar-section training-section">
+            <h2>{{ $t('resume.selectedTraining') }}</h2>
+            <ul class="compact-list">
+              <li v-for="item in resumeProfile.selectedTraining" :key="item">{{ item }}</li>
+            </ul>
+          </section>
+        </aside>
+
+        <div class="resume-content secondary-content">
+          <section class="section-block experience-section">
+            <h2>{{ $t('resume.previousExperience') }}</h2>
+            <article
+              v-for="entry in previousExperiences"
+              :key="`${entry.company}-${entry.period}`"
+              class="experience-item"
+            >
+              <div class="experience-heading">
+                <div>
+                  <h3>{{ entry.role }}</h3>
+                  <p>
+                    <strong>{{ entry.company }}</strong>
+                    <span v-if="entry.location"> · {{ entry.location }}</span>
+                  </p>
+                </div>
+                <span>{{ entry.period }}</span>
+              </div>
+              <p>{{ entry.body }}</p>
+              <ul v-if="entry.bullets.length" class="compact-list">
+                <li v-for="bullet in entry.bullets" :key="bullet">{{ bullet }}</li>
+              </ul>
+            </article>
+          </section>
+
+          <section class="section-block projects-section">
+            <h2>{{ $t('resume.projects') }}</h2>
+            <article
+              v-for="project in resumeProfile.projects"
+              :key="project.name"
+              class="project-item"
+            >
+              <div>
+                <h3>{{ project.name }}</h3>
+                <p>{{ project.body }}</p>
+              </div>
+              <a
+                :href="project.href"
+                target="_blank"
+                rel="noopener noreferrer"
+                :aria-label="`${$t('resume.openGithub')}: ${project.name}`"
+              >
+                <q-icon name="fa-brands fa-github" size="14px" />
+                <span>{{ project.linkLabel }}</span>
+              </a>
+            </article>
+          </section>
+        </div>
+      </section>
+    </main>
   </q-page>
 </template>
 
@@ -177,10 +259,8 @@ import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
 import profilePicture from 'src/assets/about-me-2.png'
-import resumeQrCode from 'src/assets/resume-qr.png'
 import resumeProfileEnUS from 'src/data/en-US/resume-profile.json'
 import resumeProfilePtBR from 'src/data/pt-BR/resume-profile.json'
-import mainSkills from 'src/data/main-skills.json'
 
 const languageStorageKey = 'portfolio.locale'
 const { locale } = useI18n()
@@ -196,10 +276,17 @@ const resumeProfileByLocale = {
 const resumeProfile = computed(
   () => resumeProfileByLocale[locale.value] ?? resumeProfileByLocale['en-US'],
 )
+const featuredExperience = computed(() => resumeProfile.value.experience[0])
+const previousExperiences = computed(() => resumeProfile.value.experience.slice(1))
 const nextLocale = computed(() => (locale.value === 'en-US' ? 'pt-BR' : 'en-US'))
 const nextLanguageLabel = computed(() => (nextLocale.value === 'pt-BR' ? 'PT-BR' : 'EN-US'))
 
 const contacts = [
+  {
+    icon: 'mail',
+    label: 'carlos.moraes.as@gmail.com',
+    href: 'mailto:carlos.moraes.as@gmail.com',
+  },
   {
     icon: 'fa-brands fa-linkedin',
     label: 'linkedin.com/in/carlosmoraesjr',
@@ -216,9 +303,9 @@ const contacts = [
     href: 'https://wa.me/5548998314627',
   },
   {
-    icon: 'fa-solid fa-globe',
-    label: 'about.robmoraes.dev.br',
-    href: 'https://about.robmoraes.dev.br',
+    icon: 'language',
+    label: 'portfolio.robmoraes.dev.br',
+    href: 'https://portfolio.robmoraes.dev.br',
   },
 ]
 
@@ -249,10 +336,20 @@ onMounted(async () => {
 </script>
 
 <style scoped>
+.resume-page {
+  gap: 28px;
+  padding-bottom: 32px;
+}
+
+.resume-document {
+  display: grid;
+  gap: 28px;
+}
+
 .resume-sheet {
   display: grid;
-  grid-template-columns: 66mm 1fr;
-  grid-template-rows: 32mm minmax(0, 1fr);
+  grid-template-columns: 66mm minmax(0, 1fr);
+  grid-template-rows: 34mm minmax(0, 1fr);
   box-sizing: border-box;
   width: 210mm;
   min-width: 210mm;
@@ -260,9 +357,13 @@ onMounted(async () => {
   max-height: 297mm;
   overflow: hidden;
   background-color: #ffffff;
-  border: 1px solid #404040;
-  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
-  color: #303030;
+  border: 1px solid #3f4850;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.42);
+  color: #27313a;
+}
+
+.resume-sheet-secondary {
+  grid-template-rows: 27mm minmax(0, 1fr);
 }
 
 .nav-toggle-sticky,
@@ -275,7 +376,7 @@ onMounted(async () => {
   min-width: 104px;
   padding: 8px 14px;
   color: #ffffff;
-  background-color: #404040;
+  background-color: #3f4850;
   border: 1px solid rgba(255, 255, 255, 0.3);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.22);
 }
@@ -287,32 +388,61 @@ onMounted(async () => {
 
 .resume-header {
   grid-column: 1 / -1;
-  display: grid;
-  place-items: center;
-  padding: 6mm 14mm;
-  background-color: #404040;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 5mm 10mm;
+  background-color: #3f4850;
   color: #ffffff;
-  text-align: center;
+}
+
+.resume-header-compact {
+  padding-top: 4mm;
+  padding-bottom: 4mm;
+}
+
+.resume-heading {
+  min-width: 0;
 }
 
 .resume-eyebrow {
-  margin-bottom: 4px;
-  font-size: 10px;
+  margin-bottom: 3px;
+  font-size: 9.5px;
   font-weight: 700;
-  letter-spacing: 0;
+  letter-spacing: 0.09em;
   text-transform: uppercase;
+  opacity: 0.82;
 }
 
 .resume-header h1 {
   margin: 0;
   font-size: 24px;
+  line-height: 1.1;
+  font-weight: 700;
+}
+
+.resume-role {
+  margin: 3px 0 0;
+  font-size: 14px;
   line-height: 1.15;
   font-weight: 700;
 }
 
-.resume-header p {
-  margin: 4px 0 0;
-  font-size: 12px;
+.resume-tagline {
+  margin: 3px 0 0;
+  font-size: 10.5px;
+  line-height: 1.25;
+  opacity: 0.9;
+}
+
+.page-number {
+  flex: 0 0 auto;
+  align-self: flex-start;
+  padding-top: 2px;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  opacity: 0.7;
 }
 
 .resume-sidebar {
@@ -320,12 +450,16 @@ onMounted(async () => {
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 11px;
+  gap: 14px;
   height: 100%;
   min-height: 0;
   overflow: hidden;
-  padding: 7mm 5mm 5mm;
-  background-color: #e6e6e6;
+  padding: 6mm 5mm;
+  background-color: #edf0f2;
+}
+
+.secondary-sidebar {
+  padding-top: 8mm;
 }
 
 .picture-container {
@@ -334,17 +468,21 @@ onMounted(async () => {
 }
 
 .picture {
-  width: 96px;
-  height: 96px;
-  border: 1px solid #404040;
-  border-radius: 60%;
+  width: 92px;
+  height: 92px;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px #77818a;
   object-fit: cover;
   object-position: center;
 }
 
-.sidebar-section {
+.sidebar-section,
+.section-block,
+.summary-section,
+.impact-section {
   display: grid;
-  gap: 7px;
+  gap: 6px;
 }
 
 h2,
@@ -355,74 +493,83 @@ p {
 
 .sidebar-section h2,
 .resume-content h2 {
-  font-size: 13px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #aeb5bb;
+  font-size: 12.5px;
   line-height: 1.2;
   font-weight: 700;
-  color: #252525;
+  letter-spacing: 0.02em;
+  color: #27313a;
+  text-transform: uppercase;
 }
 
 .contact-section {
-  gap: 8px;
+  gap: 7px;
 }
 
 .contact-link {
   display: grid;
-  grid-template-columns: 20px 1fr;
+  grid-template-columns: 19px minmax(0, 1fr);
   align-items: center;
   gap: 5px;
-  color: #404040;
-  font-size: 10px;
-  line-height: 1.25;
+  color: #35414b;
+  font-size: 10.25px;
+  line-height: 1.35;
   text-decoration: none;
   overflow-wrap: anywhere;
 }
 
-.resume-skill-list {
-  display: grid;
-  gap: 7px;
+.contact-link:not(.contact-location):hover {
+  text-decoration: underline;
 }
 
-.resume-skill-item {
-  display: grid;
-  grid-template-columns: 48px 1fr;
-  align-items: center;
-  gap: 7px;
-}
-
-.resume-skill-label {
-  font-size: 10px;
-  line-height: 1;
+.contact-location {
   font-weight: 600;
 }
 
-.print-skill-bar {
-  display: none;
+.foundation-section p {
+  font-size: 10.4px;
+  line-height: 1.45;
+  color: #3f4850;
 }
 
 .compact-list {
   display: grid;
-  gap: 5px;
+  gap: 4px;
   margin: 0;
-  padding-left: 14px;
-  font-size: 10px;
-  line-height: 1.35;
+  padding-left: 15px;
+  font-size: 10.25px;
+  line-height: 1.4;
 }
 
-.portfolio-section {
+.ats-download {
+  display: grid;
+  grid-template-columns: 24px minmax(0, 1fr);
+  gap: 8px;
+  align-items: center;
   margin-top: auto;
-  justify-items: center;
-  text-align: center;
+  padding: 10px;
+  border: 1px solid #3f4850;
+  border-radius: 4px;
+  background-color: #3f4850;
+  color: #ffffff;
+  text-decoration: none;
 }
 
-.portfolio-section img {
-  width: 82px;
-  height: 82px;
+.ats-download span {
+  display: grid;
+  gap: 2px;
 }
 
-.portfolio-section p {
+.ats-download strong {
+  font-size: 10.5px;
+  line-height: 1.2;
+}
+
+.ats-download small {
   font-size: 9px;
-  line-height: 1.35;
-  color: #505050;
+  line-height: 1.3;
+  opacity: 0.86;
 }
 
 .resume-content {
@@ -434,89 +581,90 @@ p {
   height: 100%;
   min-height: 0;
   overflow: hidden;
-  padding: 7mm 8mm;
+  padding: 6mm 7mm;
 }
 
-.summary-section {
-  display: grid;
-  gap: 6px;
+.secondary-content {
+  gap: 12px;
+  padding-top: 8mm;
 }
 
-.summary-section p,
-.experience-item p,
-.education-strip p {
+.summary-section > p,
+.experience-item > p,
+.project-item p {
   font-size: 11px;
   line-height: 1.45;
-  color: #404040;
-  text-align: justify;
+  color: #3f4850;
 }
 
 .positioning-list {
   display: grid;
-  gap: 4px;
+  gap: 3px;
   margin: 0;
-  padding-left: 16px;
+  padding-left: 15px;
   font-size: 10.5px;
-  line-height: 1.35;
+  line-height: 1.4;
 }
 
 .impact-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 8px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6px;
 }
 
 .impact-item {
   display: grid;
-  grid-template-columns: 24px 1fr;
-  gap: 6px;
-  padding: 6px;
-  border: 1px solid #d0d0d0;
-  border-left: 4px solid #707070;
-  border-radius: 4px;
-  background-color: #f7f7f7;
+  gap: 2px;
+  padding: 6px 7px;
+  border: 1px solid #d4d8db;
+  border-left: 3px solid #596772;
+  border-radius: 3px;
+  background-color: #f7f8f9;
 }
 
-.impact-item :deep(.q-icon) {
-  color: #404040;
+.impact-heading {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #35414b;
+}
+
+.impact-heading strong {
+  font-size: 13px;
+  line-height: 1;
 }
 
 .impact-item h3,
 .skill-group h3,
-.experience-heading h3 {
-  font-size: 11px;
-  line-height: 1.2;
+.experience-heading h3,
+.project-item h3,
+.education-section h3 {
+  font-size: 10.8px;
+  line-height: 1.25;
   font-weight: 700;
-  color: #252525;
+  color: #27313a;
 }
 
 .impact-item p {
-  margin-top: 3px;
-  font-size: 9px;
-  line-height: 1.32;
-  color: #505050;
-}
-
-.section-block {
-  display: grid;
-  gap: 6px;
-}
-
-.section-block h2,
-.summary-section h2 {
-  padding-bottom: 4px;
-  border-bottom: 1px solid #b8b8b8;
+  font-size: 9.8px;
+  line-height: 1.35;
+  color: #4c5861;
 }
 
 .skill-group-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 8px 10px;
+  gap: 6px 9px;
 }
 
 .skill-group {
   display: grid;
-  gap: 5px;
+  align-content: start;
+  gap: 4px;
+}
+
+.skill-group:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
 }
 
 .skill-tags {
@@ -527,20 +675,21 @@ p {
 
 .skill-chip {
   margin: 0;
-  min-height: 20px;
-  font-size: 10px;
+  min-height: 18px;
+  font-size: 9.5px;
   line-height: 1.1;
 }
 
 .experience-section {
-  gap: 5px;
+  gap: 6px;
 }
 
 .experience-item {
   display: grid;
   gap: 4px;
-  padding-bottom: 5px;
-  border-bottom: 1px solid #e1e1e1;
+  padding-bottom: 6px;
+  border-bottom: 1px solid #dfe2e4;
+  break-inside: avoid;
 }
 
 .experience-item:last-child {
@@ -556,57 +705,281 @@ p {
 
 .experience-heading p {
   margin-top: 2px;
-  font-size: 10px;
-  line-height: 1.2;
-  color: #505050;
-  text-align: left;
+  font-size: 9.8px;
+  line-height: 1.25;
+  color: #53606a;
 }
 
-.experience-heading span {
+.experience-heading > span {
   flex: 0 0 auto;
-  max-width: 34%;
-  font-size: 9px;
+  max-width: 29%;
+  font-size: 9.2px;
   line-height: 1.25;
-  color: #606060;
+  color: #65717a;
   text-align: right;
 }
 
-.education-strip {
-  display: grid;
-  grid-template-columns: 20px 1fr;
-  gap: 6px;
-  align-items: baseline;
-  margin-top: auto;
-  padding-top: 6px;
-  border-top: 1px solid #b8b8b8;
+.featured-experience .compact-list {
+  font-size: 10.5px;
+  line-height: 1.4;
 }
 
-.education-strip :deep(.q-icon) {
-  color: #404040;
+.secondary-content .experience-item > p {
+  font-size: 10.7px;
+  line-height: 1.4;
 }
 
-.education-strip > div {
+.secondary-content .compact-list {
+  font-size: 10.5px;
+  line-height: 1.35;
+}
+
+.practice-tags {
   display: flex;
   flex-wrap: wrap;
-  gap: 4px 8px;
-  align-items: baseline;
+  gap: 5px;
 }
 
-.education-strip h2 {
-  font-size: 11px;
+.practice-tags span {
+  padding: 4px 6px;
+  border: 1px solid #c5cbd0;
+  border-radius: 3px;
+  background-color: #f8f9fa;
+  font-size: 9.6px;
   line-height: 1.2;
 }
 
-.education-strip p {
-  flex: 1 1 260px;
-  font-size: 10px;
-  line-height: 1.3;
-  text-align: left;
+.education-section article {
+  display: grid;
+  gap: 2px;
 }
 
-@media (max-width: 210mm) {
+.education-section p,
+.training-section li {
+  font-size: 10.3px;
+  line-height: 1.4;
+  color: #46525b;
+}
+
+.education-section span {
+  font-size: 9.2px;
+  color: #65717a;
+}
+
+.projects-section {
+  margin-top: 2px;
+}
+
+.project-item {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 10px;
+  align-items: center;
+  padding: 7px 8px;
+  border: 1px solid #d4d8db;
+  border-left: 3px solid #596772;
+  border-radius: 3px;
+  background-color: #f8f9fa;
+  break-inside: avoid;
+}
+
+.project-item > div {
+  display: grid;
+  gap: 2px;
+}
+
+.project-item > a {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  max-width: 170px;
+  color: #35414b;
+  font-size: 9.4px;
+  line-height: 1.25;
+  text-align: right;
+  text-decoration: none;
+  overflow-wrap: anywhere;
+}
+
+.project-item > a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 820px) {
   .resume-page {
-    justify-content: flex-start;
+    display: block;
+    margin: 0;
+    padding-top: 76px;
+    padding-bottom: 0;
+  }
+
+  .resume-document {
+    display: block;
+  }
+
+  .resume-sheet {
+    display: block;
+    width: 100%;
+    min-width: 0;
+    height: auto;
+    max-height: none;
+    overflow: visible;
+    border: 0;
+    box-shadow: none;
+  }
+
+  .resume-sheet + .resume-sheet {
+    margin-top: 16px;
+    border-top: 10px solid #28292a;
+  }
+
+  .resume-header {
+    padding: 24px;
+  }
+
+  .resume-header h1 {
+    font-size: clamp(22px, 7vw, 28px);
+  }
+
+  .page-number {
+    display: none;
+  }
+
+  .resume-sidebar,
+  .resume-content {
+    height: auto;
+    min-height: 0;
+    overflow: visible;
+    padding: 24px;
+  }
+
+  .resume-sidebar {
+    gap: 18px;
+  }
+
+  .picture {
+    width: 84px;
+    height: 84px;
+  }
+
+  .ats-download {
+    margin-top: 0;
+  }
+
+  .resume-content,
+  .secondary-content {
+    gap: 18px;
+  }
+
+  .impact-grid,
+  .skill-group-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .skill-group:last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  .experience-heading {
+    display: grid;
+    gap: 3px;
+  }
+
+  .experience-heading > span {
+    max-width: none;
+    text-align: left;
+  }
+
+  .project-item {
+    grid-template-columns: 1fr;
+  }
+
+  .project-item > a {
+    max-width: none;
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 820px) {
+  .resume-role {
+    font-size: 17px;
+  }
+
+  .resume-eyebrow {
+    font-size: 11px;
+  }
+
+  .resume-tagline {
+    font-size: 13px;
+    line-height: 1.35;
+  }
+
+  .sidebar-section h2,
+  .resume-content h2 {
+    font-size: 15px;
+  }
+
+  .contact-link {
+    font-size: 13px;
+  }
+
+  .foundation-section p,
+  .summary-section > p,
+  .experience-item > p,
+  .project-item p {
+    font-size: 14px;
+    line-height: 1.55;
+  }
+
+  .compact-list,
+  .positioning-list,
+  .featured-experience .compact-list,
+  .secondary-content .compact-list {
+    font-size: 13.5px;
+    line-height: 1.5;
+  }
+
+  .impact-heading strong {
+    font-size: 16px;
+  }
+
+  .impact-item h3,
+  .skill-group h3,
+  .experience-heading h3,
+  .project-item h3,
+  .education-section h3 {
+    font-size: 14px;
+  }
+
+  .impact-item p {
+    font-size: 13px;
+  }
+
+  .skill-chip {
+    min-height: 24px;
+    font-size: 12.5px;
+  }
+
+  .experience-heading p,
+  .experience-heading > span {
+    font-size: 12.5px;
+  }
+
+  .secondary-content .experience-item > p {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  .practice-tags span,
+  .education-section p,
+  .training-section li {
+    font-size: 13px;
+    line-height: 1.45;
+  }
+
+  .education-section span,
+  .project-item > a {
+    font-size: 12.5px;
   }
 }
 
@@ -622,41 +995,51 @@ p {
   :global(.q-layout),
   :global(.q-page-container),
   .resume-page {
-    background-color: #fff;
     min-height: 0;
     margin: 0;
     padding: 0;
+    background-color: #ffffff;
+  }
+
+  .resume-document {
+    display: block;
   }
 
   .resume-sheet {
-    box-shadow: unset;
-    border: none;
+    margin: 0;
+    border: 0;
+    box-shadow: none;
+    break-after: page;
+  }
+
+  .resume-sheet:last-child {
+    break-after: auto;
   }
 
   .resume-header {
-    background-color: #fff;
-    color: #000;
+    border-bottom: 2px solid #3f4850;
+    background-color: #ffffff;
+    color: #182028;
+  }
+
+  .resume-eyebrow,
+  .resume-tagline,
+  .page-number {
+    opacity: 1;
+  }
+
+  .resume-sidebar {
+    background-color: #f0f2f3;
+  }
+
+  .ats-download {
+    border-color: #596772;
+    background-color: #ffffff;
+    color: #27313a;
   }
 
   .no-print {
     display: none;
-  }
-
-  .screen-skill-bar {
-    display: none;
-  }
-
-  .print-skill-bar {
-    display: block;
-    width: 100%;
-    height: 7px;
-    border-bottom: 1px solid #b0b0b0;
-  }
-
-  .print-skill-bar span {
-    display: block;
-    height: 0;
-    border-bottom: 6px solid #404040;
   }
 }
 </style>
