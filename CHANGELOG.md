@@ -9,6 +9,13 @@ contract.
 
 ## [Unreleased]
 
+## [0.8.1] - 2026-09-07
+
+### Fixed
+
+- Restored portfolio startup after the Quasar tooling upgrade by defining build
+  metadata through the generated Vite configuration.
+
 ## [0.8.0] - 2026-09-07
 
 ### Added
