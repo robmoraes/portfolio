@@ -258,9 +258,9 @@
 import { computed, onMounted } from 'vue'
 import { useI18n } from 'vue-i18n'
 import { useRoute, useRouter } from 'vue-router'
-import profilePicture from 'src/assets/about-me-2.png'
-import resumeProfileEnUS from 'src/data/en-US/resume-profile.json'
-import resumeProfilePtBR from 'src/data/pt-BR/resume-profile.json'
+import profilePicture from '@/assets/about-me-2.png'
+import resumeProfileEnUS from '@/data/en-US/resume-profile.json'
+import resumeProfilePtBR from '@/data/pt-BR/resume-profile.json'
 
 const languageStorageKey = 'portfolio.locale'
 const { locale } = useI18n()
