@@ -1,4 +1,4 @@
-import { defineRouter } from '#q-app/wrappers'
+import { defineRouter } from '#q-app'
 import {
   createRouter,
   createMemoryHistory,

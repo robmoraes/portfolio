@@ -9,6 +9,25 @@ contract.
 
 ## [Unreleased]
 
+## [0.8.0] - 2026-09-07
+
+### Added
+
+- Added an ATS-optimized Senior DevOps Engineer resume with generation and
+  validation scripts.
+- Added public project evidence for `aws-swarm-lab` and `Pinleaf` to the visual
+  resume.
+
+### Changed
+
+- Repositioned the bilingual visual resume around DevOps and Platform
+  Engineering while preserving the software engineering foundation.
+- Reworked desktop, mobile and print layouts into a readable two-page resume.
+- Upgraded `@quasar/app-vite` to 3.8.1 and migrated source aliases to the current
+  Quasar convention.
+- Refreshed npm dependencies and resolved the reported audit vulnerabilities.
+- Updated the project version to 0.8.0.
+
 ## [0.7.0] - 2026-06-17
 
 ### Added
@@ -137,7 +156,8 @@ contract.
 - Configured the Quasar/Vite build to emit relative asset paths for GitHub
   Pages compatibility.
 
-[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.8.0...HEAD
+[0.8.0]: https://github.com/robmoraes/portfolio/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/robmoraes/portfolio/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/robmoraes/portfolio/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/robmoraes/portfolio/compare/v0.4.0...v0.5.0

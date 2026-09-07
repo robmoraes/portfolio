@@ -1,92 +1,161 @@
 {
-  "title": "Currículo",
-  "eyebrow": "Resumo executivo",
-  "name": "Carlos Roberto Moraes Rodrigues Jr.",
-  "role": "Engenheiro de Software | Backend, Cloud & DevOps",
-  "location": "Brasil",
-  "summary": "Engenheiro de Software com mais de duas décadas construindo, sustentando e evoluindo sistemas web. Atuação atual concentrada em backend, cloud, automações, DevOps e modernização de sistemas críticos, combinando profundidade técnica com pragmatismo para entregar software confiável em ambientes reais de operação.",
+  "eyebrow": "Currículo profissional",
+  "name": "Carlos R Moraes Rodrigues",
+  "role": "Senior DevOps Engineer",
+  "tagline": "DevOps e Platform Engineering com base sólida em engenharia de software",
+  "location": "Palhoça, Santa Catarina",
+  "summary": "Engenheiro de software com mais de 20 anos de experiência e atuação direta, nos últimos cinco anos, na sustentação de sistemas críticos e infraestrutura AWS em produção. A trajetória em backend evoluiu para DevOps e Platform Engineering a partir da modernização de aplicações legadas, da automação da operação e da construção de ambientes mais confiáveis.",
   "positioning": [
-    "Sustentação e evolução de sistemas críticos com PHP/Laravel, Go, AWS e containers.",
-    "Perfil hands-on, maduro tecnicamente, com histórico de transitar entre legado, produto e infraestrutura.",
-    "Foco em confiabilidade operacional, clareza arquitetural e entrega incremental sem excesso de complexidade."
+    "Investiga problemas atravessando aplicação, runtime, containers, Linux, rede, observabilidade e cloud.",
+    "Combina execução hands-on, liderança técnica, gestão de riscos e comunicação operacional."
+  ],
+  "technicalFoundation": "Mais de duas décadas desenvolvendo e sustentando sistemas web formam a base para decisões de plataforma conectadas às necessidades reais das aplicações.",
+  "foundationSkills": [
+    "PHP, Laravel, APIs e integrações",
+    "Linux e bancos de dados relacionais",
+    "Modernização de sistemas legados"
+  ],
+  "atsCallout": "PDF em português, 2 páginas e otimizado para recrutamento.",
+  "practices": [
+    "DevOps",
+    "Platform Engineering",
+    "FinOps",
+    "Fundamentos de SRE",
+    "Gestão de incidentes",
+    "Gestão de mudanças",
+    "Liderança técnica"
   ],
   "impactHighlights": [
     {
       "icon": "cloud",
-      "title": "Cloud e operação crítica",
-      "body": "Sustentação, monitoramento e evolução de sistemas de alto impacto em infraestrutura AWS."
+      "metric": "AWS",
+      "title": "Infraestrutura em produção",
+      "body": "Operação de sistemas críticos com atenção a disponibilidade, segurança e custos."
     },
     {
       "icon": "hub",
-      "title": "Modernização pragmática",
-      "body": "Migração de monólitos legados para containers, com Traefik, WAF, secrets, observabilidade e deploys automatizados."
+      "metric": "3 zonas",
+      "title": "Borda em alta disponibilidade",
+      "body": "Evolução para ALB, ACM e Traefik distribuído, validada antes do cutover."
     },
     {
-      "icon": "terminal",
-      "title": "Automações úteis",
-      "body": "APIs e automações em Go e Python integrando openSIPS, FreeSWITCH e soluções do ecossistema VoIP."
+      "icon": "trending_down",
+      "metric": ">99%",
+      "title": "Redução de tráfego inter-AZ",
+      "body": "Diagnóstico sistêmico ao correlacionar billing, métricas, rede e processos."
+    },
+    {
+      "icon": "inventory_2",
+      "metric": "+100",
+      "title": "Recursos AWS classificados",
+      "body": "Inventário e governança para ownership e atribuição futura de custos."
     }
   ],
   "skillGroups": [
     {
-      "title": "Backend e APIs",
-      "items": ["PHP", "Laravel", "Go", "REST APIs", "Node.js", ".NET"]
+      "title": "Cloud",
+      "items": ["AWS", "EC2", "RDS", "S3", "VPC", "IAM", "ALB", "ACM", "EFS", "CloudWatch"]
     },
     {
-      "title": "Cloud e DevOps",
-      "items": ["AWS", "Docker", "Docker Swarm", "Traefik", "Grafana Stack", "WAF"]
+      "title": "Containers e borda",
+      "items": ["Docker", "Docker Swarm", "Traefik", "Nginx", "WAF"]
     },
     {
-      "title": "Frontend aplicado",
-      "items": ["Vue.js", "Quasar", "JavaScript", "UX pragmática"]
+      "title": "Infrastructure as Code (IaC) e automação",
+      "items": ["Terraform", "Ansible", "Python", "Bash"]
     },
     {
-      "title": "Dados e arquitetura",
-      "items": ["PostgreSQL", "MySQL", "SQL Server", "modelagem", "evolução de legado"]
+      "title": "CI/CD",
+      "items": ["GitHub Actions", "Bitbucket Pipelines"]
+    },
+    {
+      "title": "Observabilidade e FinOps",
+      "items": ["Grafana", "Prometheus", "Loki", "Alloy", "CloudWatch", "FinOps"]
     }
   ],
   "experience": [
     {
-      "company": "Seventh LTDA",
-      "role": "Software Engineer",
-      "period": "abr/2021 até hoje",
-      "body": "Atuação em sistemas web, APIs, automações e sustentação de aplicações críticas.",
+      "company": "Seventh",
+      "role": "Desenvolvedor Sênior — atuação em DevOps e Platform Engineering",
+      "period": "abr/2021 – atual",
+      "location": "Palhoça, SC",
+      "body": "Atuação concentrada em sistemas críticos, infraestrutura AWS, modernização de aplicações e evolução da plataforma de containers.",
       "bullets": [
-        "Evolução de sistemas PHP/Laravel e colaboração multidisciplinar com Go, Python, Node.js e .NET.",
-        "Responsabilidade por sustentação, observabilidade e melhorias operacionais em AWS.",
-        "Uso criterioso de IA como apoio técnico para mentoria, análise e construção de soluções."
+        "Opera e evolui infraestrutura AWS em produção com EC2, RDS, S3, VPC, EFS, IAM e CloudWatch.",
+        "Construiu e sustenta uma plataforma Docker Swarm; evoluiu a borda para ALB, ACM e Traefik distribuído entre três zonas.",
+        "Liderou a modernização de aplicações PHP legadas para workloads containerizados com Nginx, WAF, filas, schedulers, secrets e health checks.",
+        "Implementou observabilidade com Grafana, Prometheus, Loki e Alloy, incluindo dashboards, alertas e runbooks.",
+        "Diagnosticou tráfego inter-AZ indevido e validou redução superior a 99%; inventariou e classificou mais de 100 recursos AWS para governança e FinOps.",
+        "Automatiza deploys e operações com Terraform, Python, Bash e Bitbucket Pipelines, documentando mudanças e riscos."
       ]
     },
     {
-      "company": "Conectaa Desenvolvimento de Sistemas LTDA",
-      "role": "Software Developer",
-      "period": "ago/2014 a fev/2021",
-      "body": "Desenvolvimento e sustentação de sistemas web, especialmente para o Poder Legislativo.",
+      "company": "Conectaa Sistemas",
+      "role": "Desenvolvedor PHP Sênior",
+      "period": "ago/2014 – fev/2021",
+      "location": "Florianópolis, SC",
+      "body": "Desenvolvimento e sustentação de aplicações web corporativas, integrações e sistemas legados para clientes institucionais.",
       "bullets": [
-        "Adoção de Laravel no backend e Vue.js/Quasar no frontend.",
-        "Aplicação de Clean Code, Design Patterns, testes automatizados e containers."
+        "Trabalhou com PHP, Laravel, Drupal, APIs e serviços de integração.",
+        "Atuou em ambientes Linux e no suporte a aplicações críticas para órgãos legislativos."
       ]
     },
     {
-      "company": "Base técnica anterior",
-      "role": "Desenvolvimento web, bancos de dados e open source",
-      "period": "2001 a 2011",
-      "body": "Formação profissional em projetos para internet, intranet, extranet, e-commerce, bancos de dados e migração de stack Microsoft para Linux, PHP e PostgreSQL.",
+      "company": "Autônomo",
+      "role": "Desenvolvedor Web Freelancer",
+      "period": "2011 – 2014",
+      "location": "",
+      "body": "Desenvolveu e manteve aplicações web com PHP, JavaScript, bancos de dados relacionais e Linux, conciliando projetos independentes com estudos de Clean Code, Design Patterns, arquitetura e testes automatizados.",
+      "bullets": []
+    },
+    {
+      "company": "Fundação CEEE de Seguridade Social",
+      "role": "Programador PHP Pleno",
+      "period": "nov/2007 – mar/2011",
+      "location": "Porto Alegre, RS",
+      "body": "Desenvolveu e sustentou sistemas corporativos internos e de autoatendimento com PHP, CodeIgniter e PostgreSQL.",
+      "bullets": []
+    },
+    {
+      "company": "Sapient AG2",
+      "role": "Desenvolvedor de Sistemas",
+      "period": "jan/2003 – nov/2007",
+      "location": "Porto Alegre, RS",
+      "body": "Desenvolveu aplicações web e sistemas corporativos com Microsoft .NET e PHP para os setores financeiro, industrial e varejista.",
+      "bullets": []
+    },
+    {
+      "company": "Fundação Educacional e Data Bank do Brasil",
+      "role": "Experiência inicial em desenvolvimento",
+      "period": "2001 – 2003",
+      "location": "RS",
+      "body": "Desenvolveu sistemas desktop, soluções para biblioteca, bancos de dados e integrações com dispositivos eletrônicos.",
       "bullets": []
     }
   ],
-  "education": {
-    "title": "Formação",
-    "body": "Tecnólogo em Processamento de Dados pela Universidade Católica de Pelotas."
-  },
-  "selectedTraining": {
-    "title": "Formações selecionadas",
-    "items": [
-      "Go: fundamentos, concorrência, testes, APIs e aplicações web",
-      "DevOps com Docker, Kubernetes e Rancher",
-      "Análise e Projeto Orientado a Objetos, UML e modelagem",
-      "SQL, PL/SQL, PostgreSQL e modelagem relacional"
-    ]
-  },
-  "portfolioCallout": "Versão digital deste currículo disponível para acesso, compartilhamento e impressão."
+  "projects": [
+    {
+      "name": "aws-swarm-lab",
+      "body": "Laboratório público de Docker Swarm HA na AWS, provisionado com Terraform e configurado com Ansible, incluindo ALB, ACM, EFS e Traefik.",
+      "href": "https://github.com/robmoraes/aws-swarm-lab",
+      "linkLabel": "robmoraes/aws-swarm-lab"
+    },
+    {
+      "name": "Pinleaf",
+      "body": "Aplicação desktop open source para Linux, escrita em Python, com testes, CI, GitHub Pages, pacote Debian e releases automatizados pelo GitHub Actions.",
+      "href": "https://github.com/robmoraes/pinleaf",
+      "linkLabel": "robmoraes/pinleaf"
+    }
+  ],
+  "education": [
+    {
+      "title": "Tecnologia em Processamento de Dados",
+      "institution": "Universidade Católica de Pelotas",
+      "period": "1998–2000"
+    }
+  ],
+  "selectedTraining": [
+    "DevOps Ninja: Docker, Kubernetes e Rancher — Udemy, jan/2022, 18h",
+    "Formação em Go: fundamentos, concorrência, testes, APIs e aplicações web — 2021"
+  ]
 }
