@@ -135,6 +135,27 @@
   ],
   "projects": [
     {
+      "name": "Distributed Systems Lab",
+      "body": "Author-led educational channel organized into multiple series and evolving seasons. The published first season contains 10 episodes on manually building the foundation of a Docker Swarm lab on AWS, progressing from EC2 and port-based publishing to a stack with WAF, domain, Traefik and TLS. It includes a complementary quiz created with Quick Quiz, whose administrative tool uses OpenAI to generate and translate questions on demand.",
+      "links": [
+        {
+          "label": "Watch the playlist",
+          "href": "https://youtube.com/playlist?list=PLd8XIvm0GJ7U&si=IDsqCRy5Kcmpr5e3",
+          "icon": "fa-brands fa-youtube"
+        },
+        {
+          "label": "Complementary quiz",
+          "href": "https://dslab.quickquiz.com.br/#/",
+          "icon": "quiz"
+        },
+        {
+          "label": "View channel",
+          "href": "https://www.youtube.com/@DistributedSystemsLab",
+          "icon": "open_in_new"
+        }
+      ]
+    },
+    {
       "name": "aws-swarm-lab",
       "body": "Public high-availability Docker Swarm lab on AWS, provisioned with Terraform and configured with Ansible, including ALB, ACM, EFS and Traefik.",
       "href": "https://github.com/robmoraes/aws-swarm-lab",
