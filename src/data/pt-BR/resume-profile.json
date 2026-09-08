@@ -135,6 +135,27 @@
   ],
   "projects": [
     {
+      "name": "Distributed Systems Lab",
+      "body": "Canal educacional autoral organizado em múltiplas séries e temporadas evolutivas. A primeira temporada publicada reúne 10 episódios sobre a construção manual da fundação de um laboratório Docker Swarm na AWS, de EC2 e publicação por porta a stack com WAF, domínio, Traefik e TLS. Inclui quiz complementar criado com o Quick Quiz, cuja ferramenta administrativa usa OpenAI para gerar e traduzir questões sob demanda.",
+      "links": [
+        {
+          "label": "Assistir à playlist",
+          "href": "https://youtube.com/playlist?list=PLd8XIvm0GJ7U&si=IDsqCRy5Kcmpr5e3",
+          "icon": "fa-brands fa-youtube"
+        },
+        {
+          "label": "Quiz complementar",
+          "href": "https://dslab.quickquiz.com.br/#/",
+          "icon": "quiz"
+        },
+        {
+          "label": "Ver canal",
+          "href": "https://www.youtube.com/@DistributedSystemsLab",
+          "icon": "open_in_new"
+        }
+      ]
+    },
+    {
       "name": "aws-swarm-lab",
       "body": "Laboratório público de Docker Swarm HA na AWS, provisionado com Terraform e configurado com Ansible, incluindo ALB, ACM, EFS e Traefik.",
       "href": "https://github.com/robmoraes/aws-swarm-lab",

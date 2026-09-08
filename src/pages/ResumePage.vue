@@ -237,15 +237,20 @@
                 <h3>{{ project.name }}</h3>
                 <p>{{ project.body }}</p>
               </div>
-              <a
-                :href="project.href"
-                target="_blank"
-                rel="noopener noreferrer"
-                :aria-label="`${$t('resume.openGithub')}: ${project.name}`"
-              >
-                <q-icon name="fa-brands fa-github" size="14px" />
-                <span>{{ project.linkLabel }}</span>
-              </a>
+              <div class="project-links">
+                <a
+                  v-for="link in project.links || [
+                    { href: project.href, label: project.linkLabel },
+                  ]"
+                  :key="link.href"
+                  :href="link.href"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <q-icon :name="link.icon || `fa-brands fa-github`" size="14px" />
+                  <span>{{ link.label }}</span>
+                </a>
+              </div>
             </article>
           </section>
         </div>
@@ -788,7 +793,13 @@ p {
   gap: 2px;
 }
 
-.project-item > a {
+.project-links {
+  display: grid;
+  gap: 4px;
+  justify-items: end;
+}
+
+.project-links a {
   display: flex;
   align-items: center;
   gap: 4px;
@@ -801,7 +812,7 @@ p {
   overflow-wrap: anywhere;
 }
 
-.project-item > a:hover {
+.project-links a:hover {
   text-decoration: underline;
 }
 

@@ -37,6 +37,7 @@ assert(pageCount <= 2, 'O currículo tem ' + pageCount + ' páginas; o limite é
 
 const text = run('pdftotext', ['-layout', pdfPath, '-'])
 const textLowerCase = text.toLocaleLowerCase('pt-BR')
+const normalizedTextLowerCase = textLowerCase.replace(/\s+/g, ' ')
 const requiredTerms = [
   'Carlos R Moraes Rodrigues',
   'Senior DevOps Engineer',
@@ -52,13 +53,16 @@ const requiredTerms = [
   'Desenvolvedor Sênior — atuação em DevOps e Platform Engineering',
   'Desenvolvedor Web Freelancer',
   'aws-swarm-lab',
+  'Distributed Systems Lab',
+  '10 episódios',
+  'Quick Quiz',
   'Pinleaf',
   'DevOps Ninja: Docker, Kubernetes e Rancher',
 ]
 
 for (const term of requiredTerms) {
   assert(
-    textLowerCase.includes(term.toLocaleLowerCase('pt-BR')),
+    normalizedTextLowerCase.includes(term.toLocaleLowerCase('pt-BR')),
     'Conteúdo obrigatório ausente na extração: ' + term,
   )
 }
@@ -74,13 +78,16 @@ const orderedTerms = [
   'Sapient AG2',
   'Projetos selecionados',
   'aws-swarm-lab',
+  'Distributed Systems Lab',
+  '10 episódios',
+  'Quick Quiz',
   'Pinleaf',
   'Formação',
 ]
 
 let previousPosition = -1
 for (const term of orderedTerms) {
-  const position = textLowerCase.indexOf(term.toLocaleLowerCase('pt-BR'))
+  const position = normalizedTextLowerCase.indexOf(term.toLocaleLowerCase('pt-BR'))
   assert(position > previousPosition, 'Ordem textual incorreta em: ' + term)
   previousPosition = position
 }
@@ -109,6 +116,8 @@ const requiredLinks = [
   'https://github.com/robmoraes',
   'https://portfolio.robmoraes.dev.br/',
   'https://github.com/robmoraes/aws-swarm-lab',
+  'https://youtube.com/playlist?list=PLd8XIvm0GJ7U&si=IDsqCRy5Kcmpr5e3',
+  'https://dslab.quickquiz.com.br/#/',
   'https://github.com/robmoraes/pinleaf',
 ]
 
