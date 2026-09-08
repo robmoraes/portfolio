@@ -9,6 +9,23 @@ contract.
 
 ## [Unreleased]
 
+## [0.9.0] - 2026-09-08
+
+### Added
+
+- Added Distributed Systems Lab as public evidence in the bilingual visual resume
+  and Portuguese ATS resume, with playlist, quiz and channel links.
+
+### Changed
+
+- Extended ATS validation to cover the new project, project order and public links.
+- Updated the project version to 0.9.0.
+
+### Fixed
+
+- Migrated router environment access to the Quasar 3 `import.meta.env` convention.
+- Enabled the Vue Options API required by the portfolio word cloud component.
+
 ## [0.8.1] - 2026-09-07
 
 ### Fixed
