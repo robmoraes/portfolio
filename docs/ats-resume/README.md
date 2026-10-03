@@ -1,8 +1,15 @@
-# Currículo ATS
+# Currículos ATS
 
-A fonte semântica fica em public/ats-resume/index.html, com estilos de tela e
-impressão em public/ats-resume/resume.css. O PDF publicado é
-public/carlos-moraes-rodrigues-devops-senior.pdf.
+Os currículos têm fontes HTML semânticas e compartilham os estilos de tela e
+impressão em `public/ats-resume/resume.css`.
+
+| Idioma | Fonte                                | PDF publicado                                            |
+| ------ | ------------------------------------ | -------------------------------------------------------- |
+| pt-BR  | `public/ats-resume/index.html`       | `public/carlos-moraes-rodrigues-devops-senior.pdf`       |
+| en-US  | `public/ats-resume/en-US/index.html` | `public/carlos-moraes-rodrigues-devops-senior-en-us.pdf` |
+
+O botão de download do currículo visual seleciona o PDF conforme o idioma ativo,
+inclusive após alternar o idioma. O endereço original do PDF em português é preservado.
 
 ## Gerar
 
@@ -10,6 +17,11 @@ public/carlos-moraes-rodrigues-devops-senior.pdf.
 outro caminho, informe-o por meio da variável CHROME_BIN.
 
     npm run resume:generate
+
+O comando gera ambos os idiomas. Para gerar somente um deles:
+
+    npm run resume:generate -- en-US
+    npm run resume:generate -- pt-BR
 
 ## Validar
 
@@ -19,5 +31,12 @@ ordem de leitura, termos não sustentados e as anotações de links do PDF.
 
     npm run resume:validate
 
-Para a revisão visual, execute npm run dev e abra /ats-resume/. Depois de alterar
-o conteúdo ou o CSS, gere e valide novamente o PDF.
+Sem argumentos, a validação verifica ambos os PDFs. Para validar um idioma:
+
+    npm run resume:validate -- en-US
+    npm run resume:validate -- pt-BR
+
+Para a revisão visual, execute `npm run dev` e abra `/ats-resume/` e
+`/ats-resume/en-US/`. Confira também os downloads em `/#/pt-BR/resume` e
+`/#/en-US/resume`, incluindo a troca de idioma. Depois de alterar o conteúdo ou o
+CSS, gere e valide novamente os PDFs afetados e revise as páginas impressas.

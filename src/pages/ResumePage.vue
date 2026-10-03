@@ -74,7 +74,7 @@
 
           <a
             class="ats-download"
-            href="/carlos-moraes-rodrigues-devops-senior.pdf"
+            :href="atsResumeUrl"
             target="_blank"
             rel="noopener noreferrer"
             download
@@ -277,6 +277,12 @@ const resumeProfileByLocale = {
   'en-US': resumeProfileEnUS,
   'pt-BR': resumeProfilePtBR,
 }
+
+const atsResumeByLocale = {
+  'en-US': './carlos-moraes-rodrigues-devops-senior-en-us.pdf',
+  'pt-BR': './carlos-moraes-rodrigues-devops-senior.pdf',
+}
+const atsResumeUrl = computed(() => atsResumeByLocale[locale.value] ?? atsResumeByLocale['en-US'])
 
 const resumeProfile = computed(
   () => resumeProfileByLocale[locale.value] ?? resumeProfileByLocale['en-US'],
