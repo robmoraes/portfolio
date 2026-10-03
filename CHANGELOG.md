@@ -9,6 +9,8 @@ contract.
 
 ## [Unreleased]
 
+## [0.10.0] - 2026-10-03
+
 ### Added
 
 - Added an English ATS resume with a dedicated HTML source and two-page PDF.
@@ -17,6 +19,7 @@ contract.
 
 - Select the ATS download according to the visual resume's active language.
 - Generate and validate ATS resumes in both languages, with an optional locale argument.
+- Updated the project version to 0.10.0.
 
 ## [0.9.0] - 2026-09-08
 
