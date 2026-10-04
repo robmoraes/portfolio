@@ -1,0 +1,42 @@
+[
+  {
+    "name": "D-Guard Calculator",
+    "focus": "Go · Vue 3 · Quasar · APIs",
+    "body": "Modernized a video surveillance calculator with capacity and licensing rules in a Go API, a public interface and an internal calibration tool. Added legacy project compatibility, three languages and printable reports."
+  },
+  {
+    "name": "SIP Registration Status",
+    "focus": "Go · PostgreSQL · OpenSIPS · k6",
+    "body": "Periodic collection and an API with transactional snapshots, idempotent publication and explicit data freshness. A k6 campaign sustained 750 individual lookups/s for 5 minutes after warm-up, 184 ms p95 and zero HTTP errors."
+  },
+  {
+    "name": "VoIP integrations and test lab",
+    "focus": "Python · FastAPI · RabbitMQ · Go",
+    "body": "Evolved FreeSWITCH connectors and a lab with an emulator, event console, and SIP/WebRTC media and recording tests. Developed a Go SIP registration bot with Digest authentication and integration with APIs and MariaDB."
+  },
+  {
+    "name": "Quality Survey",
+    "focus": "Go · PostgreSQL · OAuth2 · HTTP",
+    "body": "Internal feedback application with triage, comments, attachments and transactional history. Local authentication and SSO with PKCE, HTTP Range media delivery, and integration, concurrency and video format tests."
+  },
+  {
+    "name": "Seventh UI and engineering methods",
+    "focus": "CSS · Codex · Figma/MCP · Spec-driven",
+    "body": "Built a design system using a personal playbook: intent, specification, plan, tasks and validation, with human review at each step. Component contracts, token compatibility and versioned references support developers and coding agents."
+  },
+  {
+    "name": "Data and BI with Elastic",
+    "focus": "Elasticsearch · Logstash · Kibana · SQL",
+    "body": "Index modeling, incremental JDBC ingestion, checkpoints and data transformations for BI and billing. Operated Kibana-managed pipelines, developed per-customer provisioning and applied company and condominium access controls."
+  },
+  {
+    "name": "AWS platform and modernization",
+    "focus": "AWS · Docker Swarm · Terraform · CI/CD",
+    "body": "Built and operates a container platform; modernized PHP applications with queues, schedulers, secrets and health checks. Evolved the edge to ALB, ACM and Traefik across three Availability Zones, with infrastructure and delivery automation."
+  },
+  {
+    "name": "Observability and FinOps",
+    "focus": "Grafana · Prometheus · Loki · Alloy",
+    "body": "Dashboards, alerts and runbooks support critical systems. Investigation across applications, networking and billing validated a reduction greater than 99% in unwanted inter-AZ traffic. Inventoried over 100 AWS resources for ownership and cost governance."
+  }
+]

@@ -1,0 +1,42 @@
+[
+  {
+    "name": "D-Guard Calculator",
+    "focus": "Go · Vue 3 · Quasar · APIs",
+    "body": "Modernização da calculadora de videomonitoramento com regras de capacidade e licenciamento em uma API Go, interface pública e ferramenta interna de calibração. Compatibilidade com projetos legados, três idiomas e relatórios imprimíveis."
+  },
+  {
+    "name": "SIP Registration Status",
+    "focus": "Go · PostgreSQL · OpenSIPS · k6",
+    "body": "Coleta periódica e API com snapshots transacionais, publicação idempotente e validade explícita dos dados. Campanha k6: 750 consultas individuais/s por 5 minutos em regime aquecido, p95 de 184 ms e zero erros HTTP."
+  },
+  {
+    "name": "Integrações e laboratório VoIP",
+    "focus": "Python · FastAPI · RabbitMQ · Go",
+    "body": "Evolução dos conectores FreeSWITCH e de um laboratório com emulador, console de eventos e testes SIP/WebRTC de mídia e gravações. Desenvolvimento de bot Go para registros SIP, com autenticação Digest e integração a APIs e MariaDB."
+  },
+  {
+    "name": "Quality Survey",
+    "focus": "Go · PostgreSQL · OAuth2 · HTTP",
+    "body": "Aplicação de feedback interno com triagem, comentários, anexos e histórico transacional. Autenticação local e SSO com PKCE, reprodução de mídia com HTTP Range e testes de integração, concorrência e formatos de vídeo."
+  },
+  {
+    "name": "Seventh UI e método de engenharia",
+    "focus": "CSS · Codex · Figma/MCP · Spec-driven",
+    "body": "Desenvolvimento do design system com playbook próprio: intenção, especificação, plano, tarefas e validação, com revisão humana por etapa. Contratos de componentes, compatibilidade de tokens e referências versionadas para desenvolvedores e agentes."
+  },
+  {
+    "name": "Dados e BI com Elastic",
+    "focus": "Elasticsearch · Logstash · Kibana · SQL",
+    "body": "Modelagem de índices, ingestão JDBC incremental, checkpoints e transformação de dados para BI e faturamento. Operação de pipelines gerenciadas pelo Kibana, provisionamento por cliente e controles de acesso por empresa e condomínio."
+  },
+  {
+    "name": "Plataforma AWS e modernização",
+    "focus": "AWS · Docker Swarm · Terraform · CI/CD",
+    "body": "Construção e operação da plataforma de containers; modernização de aplicações PHP com filas, schedulers, secrets e health checks. Evolução da borda para ALB, ACM e Traefik em três zonas, com automação de infraestrutura e entrega."
+  },
+  {
+    "name": "Observabilidade e FinOps",
+    "focus": "Grafana · Prometheus · Loki · Alloy",
+    "body": "Dashboards, alertas e runbooks para sustentar sistemas críticos. Diagnóstico entre aplicação, rede e billing validou redução superior a 99% do tráfego inter-AZ indevido. Inventário de mais de 100 recursos AWS para ownership e governança de custos."
+  }
+]

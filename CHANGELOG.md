@@ -9,6 +9,26 @@ contract.
 
 ## [Unreleased]
 
+### Added
+
+- Added bilingual project highlights covering Go products, Python VoIP integrations,
+  Elastic BI, spec-driven engineering, and AWS platform operations.
+- Consolidated project evidence supporting the hybrid resume.
+
+### Changed
+
+- Balanced the portfolio, visual resume and ATS resumes between software engineering
+  and DevOps/platform engineering in Portuguese and English.
+- Updated skills and Seventh contributions with Go, Python, integration testing,
+  Elastic, and AI-assisted engineering; retained the scope of reported load-test results.
+- Regenerated both two-page ATS PDFs and renamed them to
+  `carlos-moraes-rodrigues-ats-resume.pdf` and
+  `carlos-moraes-rodrigues-ats-resume-en-us.pdf`, updating all download links.
+
+### Fixed
+
+- Set explicit A4 page breaks for portfolio printing, including the project highlights.
+
 ## [0.10.0] - 2026-10-03
 
 ### Added

@@ -1,12 +1,12 @@
 [
-  "Backend",
+  "Backend/APIs",
   "Frontend",
-  "Infraestrutura",
   "DevOps",
+  "Plataforma",
   "Cloud",
-  "Automações",
+  "Observabilidade",
   "VoIP",
-  "Bancos de dados",
-  "Missão crítica",
-  "Evolução arquitetural"
+  "Dados e BI",
+  "Testes",
+  "Arquitetura"
 ]

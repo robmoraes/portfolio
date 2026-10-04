@@ -1,11 +1,17 @@
 export default {
   header: {
-    occupation: 'Engenheiro de Software',
+    occupation: 'Engenharia de Software e DevOps / Plataforma',
   },
   sections: {
     mainSkills: 'Habilidades',
     areasOfExpertise: 'Áreas de atuação',
     coursesAndCertifications: 'Cursos e Certificações',
+    selectedProjects: 'Projetos e entregas selecionados',
+  },
+  selectedProjects: {
+    context: 'Experiência na Seventh',
+    introduction:
+      'Desenvolvimento de produtos, integrações e dados conectado à entrega e operação da plataforma.',
   },
   navigation: {
     portfolio: 'Portfólio',
@@ -21,7 +27,7 @@ export default {
     previousExperience: 'Trajetória anterior',
     selectedExperience: 'Experiência selecionada',
     highlights: 'Resultados selecionados',
-    technicalFoundation: 'Base em engenharia de software',
+    technicalFoundation: 'Software e plataforma',
     practices: 'Práticas de engenharia',
     projects: 'Projetos públicos',
     education: 'Formação acadêmica',

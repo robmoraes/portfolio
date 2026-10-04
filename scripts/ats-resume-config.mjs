@@ -2,12 +2,12 @@ const resumes = [
   {
     locale: 'pt-BR',
     source: 'public/ats-resume/index.html',
-    pdf: 'public/carlos-moraes-rodrigues-devops-senior.pdf',
+    pdf: 'public/carlos-moraes-rodrigues-ats-resume.pdf',
   },
   {
     locale: 'en-US',
     source: 'public/ats-resume/en-US/index.html',
-    pdf: 'public/carlos-moraes-rodrigues-devops-senior-en-us.pdf',
+    pdf: 'public/carlos-moraes-rodrigues-ats-resume-en-us.pdf',
   },
 ]
 
