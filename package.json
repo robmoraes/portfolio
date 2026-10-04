@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
-  "version": "0.10.0",
-  "description": "My Portfolio",
+  "version": "0.11.0",
+  "description": "Software and platform engineering portfolio - Go, Python, DevOps and AWS",
   "productName": "Rob Moraes Portfolio",
   "author": "Carlos R Moraes <carlos.moraes.as@gmail.com>",
   "type": "module",

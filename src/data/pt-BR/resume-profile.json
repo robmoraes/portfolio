@@ -1,92 +1,101 @@
 {
   "eyebrow": "Currículo profissional",
   "name": "Carlos R Moraes Rodrigues",
-  "role": "Senior DevOps Engineer",
-  "tagline": "DevOps e Platform Engineering com base sólida em engenharia de software",
+  "role": "Senior Software & DevOps Engineer",
+  "tagline": "Engenharia de software e plataforma, da aplicação à operação",
   "location": "Palhoça, Santa Catarina",
-  "summary": "Engenheiro de software com mais de 20 anos de experiência e atuação direta, nos últimos cinco anos, na sustentação de sistemas críticos e infraestrutura AWS em produção. A trajetória em backend evoluiu para DevOps e Platform Engineering a partir da modernização de aplicações legadas, da automação da operação e da construção de ambientes mais confiáveis.",
+  "summary": "Engenheiro com mais de 20 anos de experiência em software e atuação em DevOps e plataforma. Desenvolve produtos, APIs e integrações em Go, Python e PHP, conectando regras de negócio, testes e dados à entrega e operação de sistemas em AWS.",
   "positioning": [
-    "Investiga problemas atravessando aplicação, runtime, containers, Linux, rede, observabilidade e cloud.",
-    "Combina execução hands-on, liderança técnica, gestão de riscos e comunicação operacional."
+    "Constrói e evolui serviços, interfaces e integrações com contratos e testes de comportamento.",
+    "Investiga problemas entre aplicação, banco, Linux, rede e cloud; conduz mudanças com revisão e validação."
   ],
-  "technicalFoundation": "Mais de duas décadas desenvolvendo e sustentando sistemas web formam a base para decisões de plataforma conectadas às necessidades reais das aplicações.",
+  "technicalFoundation": "Desenvolvimento e operação orientam decisões sobre arquitetura, confiabilidade e evolução dos produtos.",
   "foundationSkills": [
-    "PHP, Laravel, APIs e integrações",
-    "Linux e bancos de dados relacionais",
-    "Modernização de sistemas legados"
+    "Go, Python, PHP e APIs",
+    "Vue/Quasar e integração de dados",
+    "AWS, Linux e sistemas distribuídos"
   ],
   "atsCallout": "PDF em português, 2 páginas e otimizado para recrutamento.",
   "practices": [
-    "DevOps",
+    "Engenharia de software",
     "Platform Engineering",
+    "Spec-Driven Development",
+    "Engenharia apoiada por IA",
+    "Testes de integração",
+    "DevOps e CI/CD",
     "FinOps",
-    "Fundamentos de SRE",
     "Gestão de incidentes",
     "Gestão de mudanças",
     "Liderança técnica"
   ],
   "impactHighlights": [
     {
-      "icon": "cloud",
-      "metric": "AWS",
-      "title": "Infraestrutura em produção",
-      "body": "Operação de sistemas críticos com atenção a disponibilidade, segurança e custos."
+      "icon": "code",
+      "metric": "Go + Vue",
+      "title": "Produto e regras de negócio",
+      "body": "API de dimensionamento de videomonitoramento, interfaces e calibração interna."
+    },
+    {
+      "icon": "speed",
+      "metric": "750 req/s",
+      "title": "API Go sob carga com k6",
+      "body": "Consultas individuais por 5 min, em regime aquecido: p95 de 184 ms, sem erros HTTP."
     },
     {
       "icon": "hub",
       "metric": "3 zonas",
-      "title": "Borda em alta disponibilidade",
-      "body": "Evolução para ALB, ACM e Traefik distribuído, validada antes do cutover."
+      "title": "Plataforma e borda AWS",
+      "body": "Docker Swarm, ALB, ACM e Traefik distribuído, com validação antes do cutover."
     },
     {
       "icon": "trending_down",
       "metric": ">99%",
-      "title": "Redução de tráfego inter-AZ",
-      "body": "Diagnóstico sistêmico ao correlacionar billing, métricas, rede e processos."
-    },
-    {
-      "icon": "inventory_2",
-      "metric": "+100",
-      "title": "Recursos AWS classificados",
-      "body": "Inventário e governança para ownership e atribuição futura de custos."
+      "title": "Menos tráfego inter-AZ indevido",
+      "body": "Resultado validado após diagnóstico de billing, métricas, rede e processos."
     }
   ],
   "skillGroups": [
     {
-      "title": "Cloud",
-      "items": ["AWS", "EC2", "RDS", "S3", "VPC", "IAM", "ALB", "ACM", "EFS", "CloudWatch"]
+      "title": "Backend e frontend",
+      "items": ["Go", "Python", "PHP/Laravel", "Vue/Quasar", "APIs REST"]
     },
     {
-      "title": "Containers e borda",
-      "items": ["Docker", "Docker Swarm", "Traefik", "Nginx", "WAF"]
+      "title": "Dados e integrações",
+      "items": ["PostgreSQL", "SQL Server", "RabbitMQ", "Elasticsearch", "Logstash"]
     },
     {
-      "title": "Infrastructure as Code (IaC) e automação",
-      "items": ["Terraform", "Ansible", "Python", "Bash"]
+      "title": "Qualidade e método",
+      "items": ["Testes de integração", "k6", "Spec-driven", "Codex", "Figma/MCP"]
     },
     {
-      "title": "CI/CD",
-      "items": ["GitHub Actions", "Bitbucket Pipelines"]
+      "title": "Cloud e containers",
+      "items": ["AWS", "Linux", "Docker Swarm", "Traefik", "Nginx/WAF"]
+    },
+    {
+      "title": "Automação e CI/CD",
+      "items": ["Terraform", "Ansible", "Bash", "GitHub Actions", "Bitbucket Pipelines"]
     },
     {
       "title": "Observabilidade e FinOps",
-      "items": ["Grafana", "Prometheus", "Loki", "Alloy", "CloudWatch", "FinOps"]
+      "items": ["Grafana", "Prometheus", "Loki/Alloy", "CloudWatch", "FinOps"]
     }
   ],
   "experience": [
     {
       "company": "Seventh",
-      "role": "Desenvolvedor Sênior — atuação em DevOps e Platform Engineering",
+      "role": "Desenvolvedor Sênior - Engenharia de Software e Plataforma",
       "period": "abr/2021 – atual",
       "location": "Palhoça, SC",
-      "body": "Atuação concentrada em sistemas críticos, infraestrutura AWS, modernização de aplicações e evolução da plataforma de containers.",
+      "body": "Desenvolvimento de produtos e integrações, evolução de sistemas críticos e operação da plataforma AWS e de containers.",
       "bullets": [
-        "Opera e evolui infraestrutura AWS em produção com EC2, RDS, S3, VPC, EFS, IAM e CloudWatch.",
-        "Construiu e sustenta uma plataforma Docker Swarm; evoluiu a borda para ALB, ACM e Traefik distribuído entre três zonas.",
-        "Liderou a modernização de aplicações PHP legadas para workloads containerizados com Nginx, WAF, filas, schedulers, secrets e health checks.",
-        "Implementou observabilidade com Grafana, Prometheus, Loki e Alloy, incluindo dashboards, alertas e runbooks.",
-        "Diagnosticou tráfego inter-AZ indevido e validou redução superior a 99%; inventariou e classificou mais de 100 recursos AWS para governança e FinOps.",
-        "Automatiza deploys e operações com Terraform, Python, Bash e Bitbucket Pipelines, documentando mudanças e riscos."
+        "Desenvolveu APIs e aplicações em Go com regras de negócio, integração SIP, PostgreSQL e testes de integração.",
+        "Modernizou a calculadora D-Guard com API Go e interfaces Vue/Quasar; evolui aplicações PHP/Laravel e integrações de BI.",
+        "Evoluiu conectores Python e um laboratório VoIP com FastAPI, RabbitMQ e testes de sinalização, mídia e gravações.",
+        "Conduziu o Seventh UI com Codex e Figma/MCP, revisando especificações, planos, tarefas e contratos de componentes.",
+        "Opera AWS e uma plataforma Docker Swarm; evoluiu a borda para ALB, ACM e Traefik em três zonas.",
+        "Modernizou aplicações legadas com containers, filas, schedulers, secrets e health checks; automatiza entrega e operação.",
+        "Implementou observabilidade com Grafana, Prometheus, Loki e Alloy; validou redução superior a 99% do tráfego inter-AZ indevido.",
+        "Opera pipelines Logstash para BI; classificou mais de 100 recursos AWS e mantém runbooks e gestão de mudanças."
       ]
     },
     {

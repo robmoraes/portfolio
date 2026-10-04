@@ -279,8 +279,8 @@ const resumeProfileByLocale = {
 }
 
 const atsResumeByLocale = {
-  'en-US': './carlos-moraes-rodrigues-devops-senior-en-us.pdf',
-  'pt-BR': './carlos-moraes-rodrigues-devops-senior.pdf',
+  'en-US': './carlos-moraes-rodrigues-ats-resume-en-us.pdf',
+  'pt-BR': './carlos-moraes-rodrigues-ats-resume.pdf',
 }
 const atsResumeUrl = computed(() => atsResumeByLocale[locale.value] ?? atsResumeByLocale['en-US'])
 

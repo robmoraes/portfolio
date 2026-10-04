@@ -47,22 +47,32 @@
       {
         "title": "Seventh LTDA",
         "subtitle": "Apr/2021 to present",
-        "body": "Worked on web systems with PHP/Laravel; APIs and automations in Go; maintenance and sustainability of high-impact critical systems; multidisciplinary work with DotNet, Python and Node.js, collaborating with projects from other departments; adoption of AI for mentoring and careful use in software solutions. Highlights:",
+        "body": "Software engineering and critical systems operations with PHP/Laravel, Go, Python and Vue.js, connecting applications, data and AWS infrastructure.",
         "highlights": [
           {
-            "icon": "cloud",
-            "title": "AWS, Cloud",
-            "body": "Responsible for sustaining, monitoring and evolving critical systems on AWS infrastructure."
+            "icon": "code",
+            "title": "Go and web products",
+            "body": "Go API and Vue/Quasar interfaces for D-Guard Calculator; Go services with PostgreSQL, idempotency and integration tests."
           },
           {
             "icon": "terminal",
-            "title": "Go, Python",
-            "body": "Automations for openSIPS and FreeSWITCH, enabling integration between company solutions and the VoIP ecosystem."
+            "title": "Python and VoIP integrations",
+            "body": "Python/FastAPI services, FreeSWITCH/RabbitMQ integration and a SIP/WebRTC lab for validating calls and recordings."
           },
           {
-            "icon": "hub",
-            "title": "DevOps",
-            "body": "Built an HA cluster with Docker Swarm, wildcard DNS, Traefik at the edge, Grafana Stack for observability, WAF and migration of the department's legacy monolithic system inventory to containers under the Single Responsibility principle, with secrets and automated deployments."
+            "icon": "cloud",
+            "title": "DevOps and platform engineering",
+            "body": "AWS/Docker Swarm across three zones, legacy modernization, CI/CD and observability with Prometheus, Grafana and Loki."
+          },
+          {
+            "icon": "analytics",
+            "title": "Elasticsearch, Logstash and BI",
+            "body": "ETL pipelines and analytical queries with incremental extraction, time normalization and data segmented by customer."
+          },
+          {
+            "icon": "design_services",
+            "title": "Specifications, AI and design system",
+            "body": "Development guided by specifications with Codex and Figma through MCP, human review and approval, and a reusable design system."
           }
         ]
       }

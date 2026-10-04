@@ -47,22 +47,32 @@
       {
         "title": "Seventh LTDA",
         "subtitle": "abr/2021 até hoje",
-        "body": "Atuação em sistemas web com PHP/Laravel; APIs e automações em Go; Manutenção e sustentabilidade de sistema críticos de alto impacto; Atuação multidisciplinar com DotNet, Python, Node.js colaborando com projetos de outros setores; Adoção de AI para mentoria e uso com critério para soluções de software; Destaque para:",
+        "body": "Engenharia de software e operação de sistemas críticos com PHP/Laravel, Go, Python e Vue.js, integrando aplicações, dados e plataforma AWS.",
         "highlights": [
           {
-            "icon": "cloud",
-            "title": "AWS, Cloud",
-            "body": "Responsável pela sustentação, monitoramento e evolução de sistemas críticos em infraestrutura AWS."
+            "icon": "code",
+            "title": "Go e produtos web",
+            "body": "API Go e interfaces Vue/Quasar na D-Guard Calculator; serviços Go com PostgreSQL, idempotência e testes de integração."
           },
           {
             "icon": "terminal",
-            "title": "Go, Python",
-            "body": "Automações para openSIPS e FreeSWITCH viabilizando integração entre as soluções da empresa com o ecossistema VoIP."
+            "title": "Python e integrações VoIP",
+            "body": "Serviços Python/FastAPI, integração FreeSWITCH/RabbitMQ e laboratório SIP/WebRTC com validação de chamadas e gravações."
           },
           {
-            "icon": "hub",
-            "title": "DevOps",
-            "body": "Construção de cluster HA com Docker Swarm, DNS Wildcard, Traefik na borda, Grafana Stack para observabilidade, WAF e migração do inventário de sistemas monolíticos legados do setor para containers sob o princípio de Single Responsibility com secrets e deploys automatizados."
+            "icon": "cloud",
+            "title": "DevOps e plataforma",
+            "body": "AWS/Docker Swarm em três zonas, migração de legados, CI/CD e observabilidade com Prometheus, Grafana e Loki."
+          },
+          {
+            "icon": "analytics",
+            "title": "Elasticsearch, Logstash e BI",
+            "body": "Pipelines ETL e consultas analíticas com extração incremental, normalização temporal e segmentação por cliente."
+          },
+          {
+            "icon": "design_services",
+            "title": "Especificação, IA e design system",
+            "body": "Desenvolvimento guiado por especificações com Codex e Figma via MCP; revisão e aprovação humanas e design system reutilizável."
           }
         ]
       }

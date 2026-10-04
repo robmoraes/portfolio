@@ -3,13 +3,18 @@
 Os currículos têm fontes HTML semânticas e compartilham os estilos de tela e
 impressão em `public/ats-resume/resume.css`.
 
-| Idioma | Fonte                                | PDF publicado                                            |
-| ------ | ------------------------------------ | -------------------------------------------------------- |
-| pt-BR  | `public/ats-resume/index.html`       | `public/carlos-moraes-rodrigues-devops-senior.pdf`       |
-| en-US  | `public/ats-resume/en-US/index.html` | `public/carlos-moraes-rodrigues-devops-senior-en-us.pdf` |
+| Idioma | Fonte                                | PDF publicado                                         |
+| ------ | ------------------------------------ | ----------------------------------------------------- |
+| pt-BR  | `public/ats-resume/index.html`       | `public/carlos-moraes-rodrigues-ats-resume.pdf`       |
+| en-US  | `public/ats-resume/en-US/index.html` | `public/carlos-moraes-rodrigues-ats-resume-en-us.pdf` |
 
 O botão de download do currículo visual seleciona o PDF conforme o idioma ativo,
-inclusive após alternar o idioma. O endereço original do PDF em português é preservado.
+inclusive após alternar o idioma.
+
+O conteúdo apresenta um perfil híbrido de engenharia de software e DevOps/plataforma.
+Os arquivos usam o nome `carlos-moraes-rodrigues-ats-resume`, com sufixo `-en-us`
+na versão em inglês. Os detalhes dos projetos ficam no portfólio, enquanto os ATS
+permanecem limitados a duas páginas.
 
 ## Gerar
 

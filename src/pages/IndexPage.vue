@@ -234,7 +234,22 @@
     </div>
     <!-- /PAGE 2 -->
 
-    <!-- PAGE 3 -->
+    <section class="page projects-page" :aria-label="$t('sections.selectedProjects')">
+      <header class="projects-header">
+        <p class="projects-context">{{ $t('selectedProjects.context') }}</p>
+        <h2>{{ $t('sections.selectedProjects') }}</h2>
+        <p>{{ $t('selectedProjects.introduction') }}</p>
+      </header>
+      <div class="selected-project-grid">
+        <article v-for="project in selectedProjects" :key="project.name" class="selected-project">
+          <h3>{{ project.name }}</h3>
+          <p class="project-focus">{{ project.focus }}</p>
+          <p>{{ project.body }}</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CERTIFICATES -->
     <div class="row justify-center items-start content-start page page-3">
       <div class="col-3 column-one">
         <div class="certificates-sidebar">
@@ -458,9 +473,11 @@ import portfolioQrCode from '@/assets/portfolio-qr.png'
 import areasOfExpertiseEnUS from '@/data/en-US/areas-of-expertise.json'
 import certificationRecordsEnUS from '@/data/en-US/certification-records.json'
 import professionalTrajectoryEnUS from '@/data/en-US/professional-trajectory.json'
+import selectedProjectsEnUS from '@/data/en-US/selected-projects.json'
 import areasOfExpertisePtBR from '@/data/pt-BR/areas-of-expertise.json'
 import certificationRecordsPtBR from '@/data/pt-BR/certification-records.json'
 import professionalTrajectoryPtBR from '@/data/pt-BR/professional-trajectory.json'
+import selectedProjectsPtBR from '@/data/pt-BR/selected-projects.json'
 import mainSkills from '@/data/main-skills.json'
 import trajectoryTags from '@/data/trajectory-tags.json'
 
@@ -505,6 +522,14 @@ const professionalTrajectoryByLocale = {
   'en-US': professionalTrajectoryEnUS,
   'pt-BR': professionalTrajectoryPtBR,
 }
+
+const selectedProjectsByLocale = {
+  'en-US': selectedProjectsEnUS,
+  'pt-BR': selectedProjectsPtBR,
+}
+const selectedProjects = computed(
+  () => selectedProjectsByLocale[locale.value] ?? selectedProjectsByLocale['en-US'],
+)
 
 const certificates = [
   {
@@ -1030,13 +1055,23 @@ div {
 .page-2 .column-two {
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .page-2-content {
   flex: 1;
 }
 
+.page-2 :deep(.q-timeline__content) {
+  padding-bottom: 12px;
+}
+
+.page-2 :deep(.q-timeline__title) {
+  margin-bottom: 8px;
+}
+
 .quote-card {
+  flex-shrink: 0;
   border-color: #d0d0d0;
   border-left: 4px solid #707070;
   border-radius: 4px;
@@ -1048,6 +1083,72 @@ div {
   padding-top: 8px;
   text-align: right;
   border-top: 1px solid #dddddd;
+}
+
+.projects-page {
+  padding: 9mm;
+  color: #404040;
+}
+
+.projects-header {
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid #596772;
+}
+
+.projects-header h2 {
+  margin: 4px 0 8px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.projects-header p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.projects-header .projects-context {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.selected-project-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.selected-project {
+  padding: 14px;
+  border: 1px solid #d4d8db;
+  border-left: 3px solid #596772;
+  border-radius: 3px;
+  background-color: #f8f9fa;
+  break-inside: avoid;
+}
+
+.selected-project h3 {
+  margin: 0 0 5px;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.selected-project p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+}
+
+.selected-project .project-focus {
+  margin-bottom: 8px;
+  font-size: 10px;
+  font-weight: 600;
+  color: #52606a;
 }
 
 .certificates-sidebar {
@@ -1148,6 +1249,11 @@ div {
 }
 
 @media print {
+  @page {
+    size: A4;
+    margin: 0;
+  }
+
   :global(html),
   :global(body),
   :global(#q-app),
@@ -1160,10 +1266,20 @@ div {
     padding: 0;
   }
 
-  div.page {
+  .page {
+    height: 297mm;
     box-shadow: unset;
     margin: 0 0 0 0;
     border: none;
+    break-after: page;
+  }
+
+  .index-page {
+    display: block;
+  }
+
+  .page-3 {
+    break-after: auto;
   }
 
   div.header {

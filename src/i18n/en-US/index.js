@@ -1,11 +1,17 @@
 export default {
   header: {
-    occupation: 'Software Engineer',
+    occupation: 'Software Engineering and DevOps / Platform',
   },
   sections: {
     mainSkills: 'Main Skills',
     areasOfExpertise: 'Areas of Expertise',
     coursesAndCertifications: 'Courses and Certifications',
+    selectedProjects: 'Selected projects and contributions',
+  },
+  selectedProjects: {
+    context: 'Experience at Seventh',
+    introduction:
+      'Product, integration and data engineering connected to platform delivery and operations.',
   },
   navigation: {
     portfolio: 'Portfolio',
@@ -21,7 +27,7 @@ export default {
     previousExperience: 'Earlier career',
     selectedExperience: 'Selected experience',
     highlights: 'Selected outcomes',
-    technicalFoundation: 'Software engineering foundation',
+    technicalFoundation: 'Software and platform',
     practices: 'Engineering practices',
     projects: 'Public projects',
     education: 'Education',
