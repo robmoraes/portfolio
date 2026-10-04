@@ -9,6 +9,8 @@ contract.
 
 ## [Unreleased]
 
+## [0.11.0] - 2026-10-03
+
 ### Added
 
 - Added bilingual project highlights covering Go products, Python VoIP integrations,
@@ -24,6 +26,7 @@ contract.
 - Regenerated both two-page ATS PDFs and renamed them to
   `carlos-moraes-rodrigues-ats-resume.pdf` and
   `carlos-moraes-rodrigues-ats-resume-en-us.pdf`, updating all download links.
+- Updated the project version to 0.11.0.
 
 ### Fixed
 
@@ -212,7 +215,8 @@ contract.
 - Configured the Quasar/Vite build to emit relative asset paths for GitHub
   Pages compatibility.
 
-[Unreleased]: https://github.com/robmoraes/portfolio/compare/v0.8.0...HEAD
+[Unreleased]: https://github.com/robmoraes/portfolio/compare/0.11.0...HEAD
+[0.11.0]: https://github.com/robmoraes/portfolio/compare/0.10.0...0.11.0
 [0.8.0]: https://github.com/robmoraes/portfolio/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/robmoraes/portfolio/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/robmoraes/portfolio/compare/v0.5.0...v0.6.0
